@@ -54,4 +54,30 @@ describe('genesis cli program', () => {
     expect(getOutput()).toContain('Environment');
     expect(getOutput()).toContain('Node.js');
   });
+
+  it('lists discovered plugins', async () => {
+    const { stream, getOutput } = createCaptureStream();
+    const exitCode = await runGenesisCli({
+      argv: ['node', 'genesis', 'plugin', 'list'],
+      stdout: stream,
+      useColor: false,
+    });
+
+    expect(exitCode).toBe(0);
+    expect(getOutput()).toContain('@genesis/plugin-example');
+    expect(getOutput()).toContain('registered');
+  });
+
+  it('shows plugin info for example plugin', async () => {
+    const { stream, getOutput } = createCaptureStream();
+    const exitCode = await runGenesisCli({
+      argv: ['node', 'genesis', 'plugin', 'info', '@genesis/plugin-example'],
+      stdout: stream,
+      useColor: false,
+    });
+
+    expect(exitCode).toBe(0);
+    expect(getOutput()).toContain('example-stub');
+    expect(getOutput()).toContain('@genesis/plugin-example:EX-001');
+  });
 });

@@ -871,39 +871,38 @@ interface TemplateHelper {
 
 ### Purpose
 
-Generation orchestration — the brain of `genesis create` and `genesis generate`. Builds generation plans, resolves conflicts, applies overwrite policies, delegates rendering to the template engine, runs hooks, and triggers post-generation validation.
+Generation orchestration for `genesis new`. Composes a generic `GenerationPipeline` of `IGenerationPipelineStep` implementations. Game-specific steps (validation, rendering, metadata) are wired in `createDefaultGenerationPipeline()` — the pipeline class itself has no domain knowledge.
 
-**Filesystem path:** `packages/scaffolding/` (rename from `packages/generators/`).
+**Filesystem path:** `packages/scaffolding/`.
 
-### Public API
+### Public API (Sprint 3.5)
 
-| Service | Method | Description |
-|---------|--------|-------------|
-| `ScaffoldService` | `createProject(request)` | New project |
-| | `createGame(request)` | New game project (7-phase) |
-| | `generateModule(request)` | Module within project |
-| | `generateApi(request)` | API resource |
-| | `generateDocs(request)` | Documentation |
-| | `generatePlugin(request)` | Plugin boilerplate |
-| | `generate(request)` | Generic by type |
-| | `preview(request)` | Dry-run |
-| | `listTemplates()` | Available project templates |
-| | `listGenerators(filter?)` | Available generators |
-| `GenerationPlanBuilder` | `buildFromTemplate(template, context)` | Plan from template |
-| | `buildFromGenerator(generator, context)` | Plan from generator |
-| | `validate(plan)` | Validate plan |
-| | `detectConflicts(plan, policy)` | Conflict detection |
-| `ContextAssembler` | `assemble(request, definition)` | Merge variable sources |
-| | `getMissingRequired(context, definition)` | Unresolved variables |
+| Export | Description |
+|--------|-------------|
+| `ScaffoldingService` | `createProject()`, `buildProjectPlan()` |
+| `createDefaultGenerationPipeline()` | Composition root for default 10-step pipeline |
+| `GenerationPipeline` | Generic step orchestrator |
+| `IMetadataWriter` / `FilesystemMetadataWriter` | Metadata persistence abstraction |
+| `GenerationMetadata` / `GenerationReport` | Persisted metadata vs transient report |
+| Pipeline steps | `ValidateInputStep`, `LoadTemplateStep`, `ResolveContextStep`, `BuildPlanStep`, `DetectConflictsStep`, `RenderStep`, `WriteFilesStep`, `ValidateOutputStep`, `PersistMetadataStep`, `BuildReportStep` |
+
+### Default pipeline order
+
+1. `validate-input` → 2. `load-template` → 3. `resolve-context` → 4. `build-plan` → 5. `detect-conflicts` → 6. `render` → 7. `write-files` → 8. `validate-output` → 9. `persist-metadata` → 10. `build-report`
 
 ### Dependencies
 
 | Package | Relationship |
 |---------|-------------|
-| `@genesis/shared` | Types, errors, generator contracts |
-| `@genesis/core` | Kernel, hooks, filesystem, plugin manager |
-| `@genesis/template-engine` | Template rendering |
-| `@genesis/validator` | Post-generation validation (optional, via interface) |
+| `@genesis/shared` | Types, validation helpers |
+| `@genesis/core` | Filesystem, errors |
+| `@genesis/config` | Project config serialization (framework only) |
+| `@genesis/template-engine` | Templates, `ComponentOrdering`, `TemplateVariableResolver` |
+| `@genesis/validator` | Post-generation validation |
+
+### Legacy API (pre–Sprint 3.5)
+
+The sections below describe the target long-term API. Current implementation is narrowed to project creation.
 
 ### Folder Structure
 

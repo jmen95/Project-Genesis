@@ -5,6 +5,7 @@ import { FRAMEWORK_NAME } from '@genesis/shared';
 
 import { type CliServices, createCliServices } from '../application/cli-services-factory.js';
 import { registerNewCommand } from '../commands/new-command.js';
+import { registerPluginCommands } from '../commands/plugin-command.js';
 import { registerValidateCommand } from '../commands/validate-command.js';
 import { GenesisCliExit } from '../errors/genesis-cli-exit.js';
 import { collectDoctorReport, formatDoctorOutput } from '../presentation/doctor-output.js';
@@ -74,6 +75,15 @@ export async function createGenesisProgram(options?: CliRuntimeOptions): Promise
     handler: services.validateProjectHandler,
     stdout,
   });
+
+  registerPluginCommands(
+    program,
+    {
+      listPluginsHandler: services.listPluginsHandler,
+      getPluginInfoHandler: services.getPluginInfoHandler,
+    },
+    stdout,
+  );
 
   program.exitOverride();
 

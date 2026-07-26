@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@genesis/core": "workspace:*",
+    "@genesis/plugin-kernel": "workspace:*",
     "@genesis/scaffolding": "workspace:*",
     "@genesis/shared": "workspace:*",
     "@genesis/template-engine": "workspace:*",

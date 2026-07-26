@@ -34,5 +34,10 @@ export function formatGenerationReport(result: GenerationResult): string {
     }
   }
 
+  if (result.report?.metadataWriteError) {
+    lines.push('');
+    lines.push(`Metadata: write failed — ${result.report.metadataWriteError}`);
+  }
+
   return `${lines.join('\n')}\n`;
 }

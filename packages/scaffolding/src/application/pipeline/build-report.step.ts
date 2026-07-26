@@ -1,10 +1,12 @@
 import type { GenerationResult } from '../../domain/generation-plan.js';
-import type { IGenerationPipelineStep, ValidatedOutput } from '../../domain/pipeline-types.js';
+import type { IGenerationPipelineStep, MetadataPersisted } from '../../domain/pipeline-types.js';
 
-export class BuildReportStep implements IGenerationPipelineStep<ValidatedOutput, GenerationResult> {
+export class BuildReportStep
+  implements IGenerationPipelineStep<MetadataPersisted, GenerationResult>
+{
   readonly name = 'build-report';
 
-  async execute(input: ValidatedOutput): Promise<GenerationResult> {
+  async execute(input: MetadataPersisted): Promise<GenerationResult> {
     let created = 0;
     let skipped = 0;
     let overwritten = 0;
@@ -32,6 +34,7 @@ export class BuildReportStep implements IGenerationPipelineStep<ValidatedOutput,
       skipped,
       overwritten,
       dryRun: input.plan.dryRun,
+      report: input.report,
       ...(input.validation !== undefined ? { validation: input.validation } : {}),
     };
   }

@@ -1,0 +1,10 @@
+{
+  "name": "@genesis/plugin-example",
+  "version": "0.1.0",
+  "apiVersion": "1.x",
+  "genesisVersion": "^0.1.0",
+  "description": "Reference plugin for Genesis plugin kernel",
+  "main": "./dist/index.js",
+  "capabilities": ["template", "validator", "hook"],
+  "templates": "templates"
+}

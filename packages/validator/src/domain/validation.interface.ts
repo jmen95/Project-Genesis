@@ -10,6 +10,12 @@ export interface IValidationRule<T> {
   validate(target: T): ValidationIssue[] | Promise<ValidationIssue[]>;
 }
 
+export interface IValidationRegistry {
+  registerRule<T>(kind: ValidationTarget['kind'], rule: IValidationRule<T>): void;
+  unregisterRule(ruleId: string): void;
+  listRules(kind?: ValidationTarget['kind']): readonly IValidationRule<unknown>[];
+}
+
 export interface IValidationService {
   validate(target: ValidationTarget): Promise<ValidationReport>;
 }

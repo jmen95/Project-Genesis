@@ -11,6 +11,7 @@ export {
   RESERVED_PROJECT_NAMES,
   validateProjectName,
 } from './validation/project-name.js';
+export { TEMPLATE_ID_PATTERN, validateTemplateId } from './validation/template-id.js';
 export type {
   ValidationIssue,
   ValidationReport,

@@ -1,0 +1,10 @@
+{
+  "$manifestVersion": "1.0",
+  "id": "example-stub",
+  "version": "0.1.0",
+  "description": "Example plugin template",
+  "genesis": {
+    "minVersion": "0.1.0"
+  },
+  "files": []
+}

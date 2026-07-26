@@ -2,6 +2,7 @@ import { createValidationReport, type ValidationIssue, type ValidationReport } f
 import type { IFilesystem } from '@genesis/core';
 
 import type {
+  IValidationRegistry,
   IValidationRule,
   IValidationService,
   ValidationTarget,
@@ -15,14 +16,30 @@ type RuleEntry = {
   readonly rule: IValidationRule<unknown>;
 };
 
-export class ValidationService implements IValidationService {
+export class RegistryValidationService implements IValidationService, IValidationRegistry {
   private readonly rules: RuleEntry[] = [];
 
   registerRule<T>(kind: ValidationTarget['kind'], rule: IValidationRule<T>): void {
+    if (this.rules.some((entry) => entry.rule.id === rule.id)) {
+      throw new Error(`Duplicate validation rule id: ${rule.id}`);
+    }
     this.rules.push({
       kind,
       rule: rule as IValidationRule<unknown>,
     });
+  }
+
+  unregisterRule(ruleId: string): void {
+    const index = this.rules.findIndex((entry) => entry.rule.id === ruleId);
+    if (index >= 0) {
+      this.rules.splice(index, 1);
+    }
+  }
+
+  listRules(kind?: ValidationTarget['kind']): readonly IValidationRule<unknown>[] {
+    return this.rules
+      .filter((entry) => kind === undefined || entry.kind === kind)
+      .map((entry) => entry.rule);
   }
 
   async validate(target: ValidationTarget): Promise<ValidationReport> {
@@ -55,10 +72,21 @@ export class ValidationService implements IValidationService {
   }
 }
 
-export function createDefaultValidationService(filesystem: IFilesystem): ValidationService {
-  const service = new ValidationService();
+/** @deprecated Use RegistryValidationService */
+export class ValidationService extends RegistryValidationService {}
+
+export function createRegistryValidationService(
+  filesystem: IFilesystem,
+): RegistryValidationService {
+  const service = new RegistryValidationService();
   service.registerRule('project-config', new GenesisConfigRule());
   service.registerRule('project-output', new ProjectStructureRule(filesystem));
   service.registerRule('project-output', new ProjectConfigFileRule(filesystem));
   return service;
+}
+
+export function createDefaultValidationService(
+  filesystem: IFilesystem,
+): RegistryValidationService {
+  return createRegistryValidationService(filesystem);
 }

@@ -4,12 +4,16 @@ import type {
   IGenerationPipelineStep,
   PlanBuilt,
 } from '../../domain/pipeline-types.js';
-import { GenerationPlanBuilder } from '../generation-plan-builder.js';
+import type { GenerationPlanBuilder } from '../generation-plan-builder.js';
 
 export class BuildPlanStep implements IGenerationPipelineStep<ContextResolved, PlanBuilt> {
   readonly name = 'build-plan';
 
-  private readonly planBuilder = new GenerationPlanBuilder();
+  private readonly planBuilder: GenerationPlanBuilder;
+
+  constructor(planBuilder: GenerationPlanBuilder) {
+    this.planBuilder = planBuilder;
+  }
 
   async execute(input: ContextResolved): Promise<PlanBuilt> {
     const plan = this.planBuilder.build(input.request, input.template);

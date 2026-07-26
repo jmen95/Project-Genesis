@@ -11,6 +11,7 @@
     { "path": "../core" },
     { "path": "../template-engine" },
     { "path": "../scaffolding" },
-    { "path": "../validator" }
+    { "path": "../validator" },
+    { "path": "../plugin-kernel" }
   ]
 }

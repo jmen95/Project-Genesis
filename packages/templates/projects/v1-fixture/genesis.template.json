@@ -1,0 +1,10 @@
+{
+  "$manifestVersion": "1.0",
+  "id": "v1-fixture",
+  "version": "1.0.0",
+  "description": "Sprint 2 compatible manifest v1.0 regression fixture",
+  "genesis": {
+    "minVersion": "0.1.0"
+  },
+  "files": []
+}

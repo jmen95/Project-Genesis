@@ -14,8 +14,10 @@ export interface TemplateEngineFactoryOptions {
   readonly renderer?: ITemplateRenderer;
 }
 
+/**
+ * @deprecated Use ITemplateRenderer with CompositeTemplateProvider. Removed in Sprint 5.
+ */
 export interface TemplateEngineBundle {
-  readonly engine: ITemplateEngine;
   readonly provider: ITemplateProvider;
   readonly contextAssembler: ContextAssembler;
   readonly renderer: ITemplateRenderer;
@@ -25,7 +27,6 @@ export function createTemplateEngineBundle(
   options: TemplateEngineFactoryOptions,
 ): TemplateEngineBundle {
   const renderer = options.renderer ?? new HandlebarsTemplateRenderer();
-  const engine = new TemplateService({ filesystem: options.filesystem, renderer });
   const provider = new FilesystemTemplateProvider({
     filesystem: options.filesystem,
     templatesRoot: options.templatesRoot,
@@ -34,7 +35,6 @@ export function createTemplateEngineBundle(
   const contextAssembler = new ContextAssembler();
 
   return {
-    engine,
     provider,
     contextAssembler,
     renderer,
@@ -62,6 +62,21 @@ export type {
 } from './domain/template-provider.interface.js';
 export { SUPPORTED_MANIFEST_VERSIONS } from './domain/template-provider.interface.js';
 export { TemplateManifestValidator } from './application/template-manifest-validator.js';
+export { ComponentOrdering } from './application/component-ordering.js';
+export { ComponentOrderingError } from './domain/component-ordering.errors.js';
+export type { ComponentOrderingErrorCode } from './domain/component-ordering.errors.js';
+export { TemplateVariableResolver } from './application/template-variable-resolver.js';
+export type {
+  ResolvedTemplateVariables,
+  TemplateVariableResolutionInput,
+} from './application/template-variable-resolver.js';
+export { CompositeTemplateProvider } from './application/composite-template-provider.js';
+export {
+  TemplateProviderRegistry,
+  type ITemplateProviderRegistry,
+  type TemplateProviderRegistration,
+} from './application/template-provider-registry.js';
+export { PluginTemplateProvider } from './infrastructure/plugin-template-provider.js';
 export { ContextAssembler } from './application/context-assembler.js';
 export type { ProjectContextInput } from './application/context-assembler.js';
 export { TemplateService } from './application/template-service.js';

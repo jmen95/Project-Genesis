@@ -6,7 +6,6 @@ import {
   GenesisError,
 } from '@genesis/core';
 import type { GenerationResult } from '@genesis/scaffolding';
-import { validateProjectName } from '@genesis/shared';
 
 import { formatGenerationReport } from '../../presentation/generation-report-formatter.js';
 import type { CreateProjectCommand, CreateProjectUseCase } from '../create-project.use-case.js';
@@ -34,16 +33,8 @@ export class NewProjectHandler {
   }
 
   async handle(input: NewProjectHandlerInput): Promise<NewProjectHandlerResult> {
-    const validation = validateProjectName(input.projectName);
-    if (!validation.ok) {
-      return {
-        exitCode: EXIT_INVALID_ARGUMENT,
-        output: `Error: ${validation.error}\n`,
-      };
-    }
-
     const command: CreateProjectCommand = {
-      projectName: validation.value,
+      projectName: input.projectName,
       ...(input.templateId !== undefined ? { templateId: input.templateId } : {}),
       ...(input.outputPath !== undefined ? { outputPath: input.outputPath } : {}),
       ...(input.dryRun !== undefined ? { dryRun: input.dryRun } : {}),

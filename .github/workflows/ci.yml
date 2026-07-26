@@ -44,9 +44,13 @@ jobs:
 
       - name: Verify CLI
         run: |
+          pnpm build --filter @genesis/plugin-example
           pnpm genesis --version
           pnpm genesis --help
           pnpm genesis doctor
+          pnpm genesis plugin list
           pnpm genesis new smoke-test --dry-run
           pnpm genesis new ci-validate-game --output /tmp/ci-validate-game
           pnpm genesis validate /tmp/ci-validate-game
+          test -f /tmp/ci-validate-game/.genesis/metadata.json
+          node -e "const m=require('/tmp/ci-validate-game/.genesis/metadata.json'); if(!m.templateId||!m.genesisVersion) process.exit(1)"

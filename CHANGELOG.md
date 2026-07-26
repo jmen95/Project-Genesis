@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `@genesis/plugin-kernel` — plugin contracts, discovery, validation, scoped registration, and hook execution
+- `@genesis/plugin-example` — reference plugin (template, validator, hook contributions)
+- `genesis plugin list` and `genesis plugin info <id>` commands
+- `IValidationRegistry` with `RegistryValidationService` (separate from `IValidationService`)
+- `CompositeTemplateProvider` with deterministic template resolution priority
+- Plugin hooks: `beforeProjectCreate`, `afterProjectCreate`, `beforeValidation`, `afterValidation`
 - `@genesis/config` — project schema types, validation, and serialization (framework-only)
 - `@genesis/validator` — composable `IValidationService` and `IValidationRule<T>`
 - Immutable `IGenerationPipelineStep<TInput, TOutput>` generation pipeline
@@ -17,6 +23,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `genesis validate [path]` command
 - `genesis new --skip-validation` flag
 - Post-generation validation report in `genesis new` output
+
+### Changed
+
+- Removed `buildProjectPlan` from public `@genesis/scaffolding` API
+- Removed `Rendered` type alias from scaffolding pipeline types
+- Narrowed public exports from `@genesis/scaffolding` and `@genesis/validator`
+- Deprecated `ITemplateEngine` in template-engine bundle surface
 
 ## [0.2.0] - 2026-07-26
 

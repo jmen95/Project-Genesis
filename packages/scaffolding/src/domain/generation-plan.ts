@@ -2,6 +2,8 @@ import type { ValidationReport } from '@genesis/shared';
 import type { OverwritePolicy } from '@genesis/template-engine';
 import type { RenderResult } from '@genesis/template-engine';
 
+import type { GenerationReport } from './generation-metadata.js';
+
 export interface GenerationPlanItem {
   readonly templatePath: string;
   readonly outputPath: string;
@@ -28,5 +30,6 @@ export interface GenerationResult {
   readonly skipped: number;
   readonly overwritten: number;
   readonly dryRun: boolean;
+  readonly report?: GenerationReport;
   readonly validation?: ValidationReport;
 }

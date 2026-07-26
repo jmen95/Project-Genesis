@@ -92,11 +92,16 @@ describe('genesis new command', () => {
 
       const readme = await readFile(join(projectDir, 'README.md'), 'utf8');
       const config = await readFile(join(projectDir, 'genesis.config.ts'), 'utf8');
+      const metadata = JSON.parse(
+        await readFile(join(projectDir, '.genesis/metadata.json'), 'utf8'),
+      );
 
       expect(readme).toContain('OceanQuest');
       expect(config).toContain('schemaVersion: 1');
       expect(config).toContain("name: 'ocean-quest'");
       expect(config).not.toContain('@genesis/config');
+      expect(metadata.templateId).toBe('default');
+      expect(metadata.genesisVersion).toBeTruthy();
     } finally {
       await rm(outputDir, { recursive: true, force: true });
       restoreTemplatesRoot(previousTemplatesRoot);

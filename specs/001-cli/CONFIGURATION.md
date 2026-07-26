@@ -1504,16 +1504,25 @@ Runtime metadata managed by Genesis — not hand-edited except `local.config.ts`
 
 ### `metadata.json`
 
+Written by `IMetadataWriter` during project generation (`PersistMetadataStep`). Contains stable generation metadata only — not the full runtime `GenerationReport`.
+
 ```json
 {
+  "schemaVersion": 1,
   "genesisVersion": "0.1.0",
-  "template": "mobile-puzzle",
-  "templateVersion": "1.2.0",
-  "createdAt": "2026-07-26T12:00:00Z",
-  "lastGeneratedAt": "2026-07-26T14:30:00Z",
-  "configHash": "sha256:abc123..."
+  "templateId": "default",
+  "templateVersion": "1.0.0",
+  "generatedAt": "2026-07-26T12:00:00Z",
+  "projectSchemaVersion": 1,
+  "filesSummary": {
+    "created": 7,
+    "overwritten": 0,
+    "skipped": 0
+  }
 }
 ```
+
+Generated projects use a self-contained `genesis.config.ts` export (no `@genesis/config` import at runtime).
 
 ---
 

@@ -1,20 +1,24 @@
 import type { IFilesystem } from '@genesis/core';
 import type {
   ContextAssembler,
-  ITemplateEngine,
   ITemplateProvider,
+  ITemplateRenderer,
 } from '@genesis/template-engine';
 import type { IValidationService } from '@genesis/validator';
 
 import { ScaffoldingService } from './application/scaffolding-service.js';
 import type { ScaffoldingServiceOptions } from './application/scaffolding-service.js';
+import type { GenerationPipeline } from './domain/generation-pipeline.js';
+import type { IMetadataWriter } from './domain/metadata-writer.interface.js';
 
 export interface CreateScaffoldingServiceOptions {
   readonly filesystem: IFilesystem;
   readonly templateProvider: ITemplateProvider;
-  readonly templateEngine: ITemplateEngine;
+  readonly templateRenderer: ITemplateRenderer;
   readonly contextAssembler: ContextAssembler;
   readonly validationService: IValidationService;
+  readonly pipeline?: GenerationPipeline;
+  readonly metadataWriter?: IMetadataWriter;
 }
 
 export function createScaffoldingService(
@@ -29,6 +33,8 @@ export type {
   GenerationPlanItem,
   GenerationResult,
 } from './domain/generation-plan.js';
+export type { GenerationMetadata, GenerationReport } from './domain/generation-metadata.js';
+export type { IMetadataWriter, MetadataWriteOptions } from './domain/metadata-writer.interface.js';
 export type { IScaffoldingService } from './domain/scaffolding.interface.js';
 export type {
   IGenerationPipelineStep,
@@ -38,18 +44,13 @@ export type {
   ContextResolved,
   PlanBuilt,
   ConflictsChecked,
-  Rendered,
+  ContentRendered,
+  FilesWritten,
   ValidatedOutput,
+  MetadataPersisted,
 } from './domain/pipeline-types.js';
-export { OutputConflictError } from './domain/scaffolding.errors.js';
+export { GenerationPipeline } from './domain/generation-pipeline.js';
+export { OutputConflictError, InputValidationError } from './domain/scaffolding.errors.js';
 export { ScaffoldingService } from './application/scaffolding-service.js';
-export { ConflictDetector } from './application/conflict-detector.js';
-export { GenerationPlanBuilder } from './application/generation-plan-builder.js';
-export { ValidateInputStep } from './application/pipeline/validate-input.step.js';
-export { LoadTemplateStep } from './application/pipeline/load-template.step.js';
-export { ResolveContextStep } from './application/pipeline/resolve-context.step.js';
-export { BuildPlanStep } from './application/pipeline/build-plan.step.js';
-export { DetectConflictsStep } from './application/pipeline/build-plan.step.js';
-export { RenderAndWriteStep } from './application/pipeline/render-and-write.step.js';
-export { ValidateOutputStep } from './application/pipeline/validate-output.step.js';
-export { BuildReportStep } from './application/pipeline/build-report.step.js';
+export { createDefaultGenerationPipeline } from './application/create-default-generation-pipeline.js';
+export type { CreateDefaultGenerationPipelineOptions } from './application/create-default-generation-pipeline.js';

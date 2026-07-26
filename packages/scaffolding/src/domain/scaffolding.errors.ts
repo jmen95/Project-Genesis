@@ -1,4 +1,4 @@
-import { EXIT_VALIDATION_FAILURE, GenesisError } from '@genesis/core';
+import { EXIT_INVALID_ARGUMENT, EXIT_VALIDATION_FAILURE, GenesisError } from '@genesis/core';
 
 export class OutputConflictError extends GenesisError {
   constructor(outputPath: string) {
@@ -9,5 +9,17 @@ export class OutputConflictError extends GenesisError {
       details: { outputPath },
     });
     this.name = 'OutputConflictError';
+  }
+}
+
+export class InputValidationError extends GenesisError {
+  constructor(message: string, details?: Readonly<Record<string, unknown>>) {
+    super({
+      code: 'INPUT_VALIDATION',
+      message,
+      exitCode: EXIT_INVALID_ARGUMENT,
+      ...(details !== undefined ? { details } : {}),
+    });
+    this.name = 'InputValidationError';
   }
 }
