@@ -19,6 +19,10 @@ Define the Genesis CLI — the primary user interface for Project Genesis. The C
 | Document | Description |
 |----------|-------------|
 | [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — lifecycle, commands, DI, config, events, hooks, public API, sequence diagrams |
+| [CLI_USER_EXPERIENCE.md](CLI_USER_EXPERIENCE.md) | **User experience specification** — help system, interaction modes, colors, progress, messages, logging, industry comparisons |
+| [COMMAND_REFERENCE.md](COMMAND_REFERENCE.md) | **Genesis Command Language (GCL)** — complete command vocabulary, subcommands, flags, examples, aliases |
+| [CONFIGURATION.md](CONFIGURATION.md) | **Configuration system** — `genesis.config.ts` schema, global/project/plugin/AI config, secrets, validation |
+| [DEVELOPER_JOURNEY.md](../000-project/DEVELOPER_JOURNEY.md) | End-to-end developer workflows from install to maintenance |
 | This document | Overview, responsibilities, and implementation roadmap |
 
 ## Scope

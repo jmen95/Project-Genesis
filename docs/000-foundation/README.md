@@ -7,6 +7,7 @@ Core governance documents that define what Project Genesis is and how it operate
 | Document | Description |
 |----------|-------------|
 | [PROJECT_CHARTER.md](PROJECT_CHARTER.md) | Vision, mission, principles, and definition of done |
+| [LONG_TERM_VISION.md](LONG_TERM_VISION.md) | Five-year north star: mission, strategy, platform, and autonomous development |
 
 ## Related
 

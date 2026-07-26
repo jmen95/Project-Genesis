@@ -9,6 +9,13 @@ phase: 1
 
 # Project Specification
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [DEVELOPER_JOURNEY.md](DEVELOPER_JOURNEY.md) | **Complete developer experience** — installation through maintenance, CLI commands, AI interactions, errors, and recovery |
+| This document | System-wide architecture, boundaries, and principles |
+
 ## Purpose
 
 Define the system-wide architecture, boundaries, and principles that every Project Genesis component must follow. This is the root specification — all other specs in `specs/` inherit constraints defined here.
@@ -183,6 +190,7 @@ The repository contains scaffold directories (`packages/generators`, `packages/t
 ## Related Documents
 
 - [specs/README.md](../README.md) — Specification index
+- [100-architecture/PACKAGES.md](../100-architecture/PACKAGES.md) — Package architecture reference
 - [001-cli](../001-cli/) — CLI specification
 - [packages/README.md](../../packages/README.md) — Package map
 

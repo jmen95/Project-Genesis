@@ -60,7 +60,7 @@ Specifications are written before code. Implementation follows this sequence:
 
 | Phase | Specifications | Milestone |
 |-------|---------------|-----------|
-| 1 — Foundation | 000, 001, 002, 004 | M1 — Genesis CLI Foundation |
+| 1 — Foundation | 000, 001, 002, 004, [100-architecture](100-architecture/) | M1 — Genesis CLI Foundation |
 | 2 — Plugins | 003, 007, 008 | M2 — Plugin Ecosystem |
 | 3 — Game Generation | 006 | M3 — Game Project Generation |
 | 4 — AI Engine | 005 | M4 — AI Development Assistant |
@@ -72,8 +72,9 @@ Each specification's README contains detailed implementation steps for its syste
 
 | ID | Specification | Phase | Package |
 |----|---------------|-------|---------|
-| [000-project](000-project/) | Project-wide architecture and principles | 1 | All |
-| [001-cli](001-cli/) | Genesis CLI command framework ([functional spec](001-cli/FUNCTIONAL_SPEC.md)) | 1 | `@genesis/cli` |
+| [000-project](000-project/) | Project-wide architecture and principles ([developer journey](000-project/DEVELOPER_JOURNEY.md)) | 1 | All |
+| [100-architecture](100-architecture/) | Core package architecture ([packages](100-architecture/PACKAGES.md), [kernel](100-architecture/KERNEL.md)) | 1 | All |
+| [001-cli](001-cli/) | Genesis CLI ([functional spec](001-cli/FUNCTIONAL_SPEC.md), [UX](001-cli/CLI_USER_EXPERIENCE.md), [commands](001-cli/COMMAND_REFERENCE.md), [config](001-cli/CONFIGURATION.md)) | 1 | `@genesis/cli` |
 | [002-template-engine](002-template-engine/) | Template discovery, rendering, validation ([functional spec](002-template-engine/FUNCTIONAL_SPEC.md)) | 1 | `@genesis/template-engine` |
 | [003-plugin-system](003-plugin-system/) | Plugin contract and lifecycle ([functional spec](003-plugin-system/FUNCTIONAL_SPEC.md)) | 2 | `@genesis/core` (kernel) |
 | [004-scaffolding](004-scaffolding/) | Project and module generation ([functional spec](004-scaffolding/FUNCTIONAL_SPEC.md)) | 1 | `@genesis/scaffolding` |
