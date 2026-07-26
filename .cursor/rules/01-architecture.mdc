@@ -1,0 +1,37 @@
+
+---
+description: Architecture rules
+alwaysApply: true
+---
+
+# Architecture Rules
+
+All implementations must respect architectural boundaries.
+
+Preferred architecture:
+
+Presentation
+|
+Application
+|
+Domain
+|
+Infrastructure
+
+
+Rules:
+
+- Domain logic must not depend on frameworks.
+- Dependencies must point inward.
+- Use interfaces between layers.
+- Avoid circular dependencies.
+- Keep modules cohesive.
+
+Before creating a new module:
+
+Check:
+
+- Existing modules
+- Standards
+- Knowledge base
+

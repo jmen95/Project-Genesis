@@ -1,0 +1,25 @@
+
+---
+description: Documentation rules
+alwaysApply: true
+---
+
+# Documentation Rules
+
+Documentation is part of the implementation.
+
+Update documentation when:
+
+- Adding features
+- Changing architecture
+- Introducing decisions
+
+Use:
+
+- Markdown
+- Clear headings
+- Examples
+- Diagrams when useful
+
+Keep documentation close to the code.
+

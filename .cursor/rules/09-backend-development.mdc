@@ -1,0 +1,25 @@
+
+---
+description: Backend development rules
+alwaysApply: true
+---
+
+# Backend Rules
+
+Backend systems should follow:
+
+- DDD
+- SOLID
+- Clean Architecture
+
+Consider:
+
+- Validation
+- Authentication
+- Authorization
+- Logging
+- Observability
+- Scalability
+
+Database access must be isolated.
+

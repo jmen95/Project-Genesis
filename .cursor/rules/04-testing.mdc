@@ -1,0 +1,24 @@
+
+---
+description: Testing rules
+alwaysApply: true
+---
+
+# Testing Rules
+
+New functionality should include tests.
+
+Testing priority:
+
+1. Domain logic
+2. Business rules
+3. Critical workflows
+
+Tests should be:
+
+- Independent
+- Readable
+- Deterministic
+
+Avoid tests that only verify implementation details.
+

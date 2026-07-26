@@ -1,0 +1,27 @@
+
+---
+description: Unity development rules
+alwaysApply: true
+---
+
+# Unity Rules
+
+Follow:
+
+- Component based design
+- Scriptable Objects where appropriate
+- Clean scene organization
+- Asset optimization
+
+Consider:
+
+- Mobile performance
+- Memory usage
+- FPS impact
+
+Avoid:
+
+- Large MonoBehaviours
+- Tight coupling
+- Unnecessary Update loops
+

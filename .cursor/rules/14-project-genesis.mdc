@@ -1,0 +1,27 @@
+
+---
+description: Project Genesis specific rules
+alwaysApply: true
+---
+
+# Project Genesis
+
+Project Genesis is an AI-Native Game Development Framework.
+
+Main goals:
+
+- Build reusable systems.
+- Automate game development workflows.
+- Create AI-assisted development pipelines.
+
+When creating new capabilities:
+
+Consider:
+
+- Plugin architecture
+- Reusability
+- Documentation
+- Automation
+
+The framework should scale for years.
+

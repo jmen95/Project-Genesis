@@ -1,0 +1,24 @@
+
+---
+description: Game development rules
+alwaysApply: true
+---
+
+# Game Development Rules
+
+Every game feature must answer:
+
+- What player problem does this solve?
+- How does it improve fun?
+- How does it affect progression?
+- How do we measure it?
+
+Consider:
+
+- Retention
+- Accessibility
+- Performance
+- Player psychology
+
+Avoid features without gameplay value.
+

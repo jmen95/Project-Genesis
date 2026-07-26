@@ -1,0 +1,20 @@
+
+---
+description: Code review rules
+alwaysApply: true
+---
+
+# Code Review Rules
+
+Review:
+
+- Correctness
+- Security
+- Maintainability
+- Performance
+- Testing
+
+Prefer constructive feedback.
+
+The goal is improving the system.
+

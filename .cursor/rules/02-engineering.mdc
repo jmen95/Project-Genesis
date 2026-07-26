@@ -1,0 +1,31 @@
+
+---
+description: General engineering rules
+alwaysApply: true
+---
+
+# Engineering Rules
+
+Code must prioritize readability.
+
+Prefer:
+
+- Small functions
+- Clear names
+- Explicit behavior
+- Simple solutions
+
+Avoid:
+
+- Magic numbers
+- Hidden side effects
+- Over-engineering
+- Premature optimization
+
+Every feature should consider:
+
+- Errors
+- Logging
+- Testing
+- Documentation
+

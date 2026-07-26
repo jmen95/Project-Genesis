@@ -1,0 +1,25 @@
+
+---
+description: TypeScript development rules
+alwaysApply: true
+---
+
+# TypeScript Rules
+
+Use strict TypeScript.
+
+Prefer:
+
+- Types over any
+- Interfaces for contracts
+- Immutable data when possible
+- Explicit return types for public methods
+
+Avoid:
+
+- any
+- duplicated types
+- unsafe casts
+
+Use modern Node.js practices.
+

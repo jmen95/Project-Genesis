@@ -1,0 +1,23 @@
+
+---
+description: Git workflow rules
+alwaysApply: true
+---
+
+# Git Rules
+
+Use meaningful commits.
+
+Prefer:
+
+feat:
+fix:
+refactor:
+docs:
+test:
+chore:
+
+Keep commits focused.
+
+Do not commit broken code.
+

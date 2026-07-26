@@ -1,0 +1,23 @@
+
+---
+description: Security rules
+alwaysApply: true
+---
+
+# Security Rules
+
+Always consider:
+
+- Authentication
+- Authorization
+- Input validation
+- Data protection
+
+Never:
+
+- Hardcode secrets
+- Log sensitive information
+- Trust external input
+
+Follow security best practices.
+

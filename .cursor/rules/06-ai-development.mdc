@@ -1,0 +1,32 @@
+
+---
+description: AI engineering rules
+alwaysApply: true
+---
+
+# AI Development Rules
+
+When implementing AI systems consider:
+
+- Context management
+- Cost
+- Latency
+- Reliability
+- Security
+
+AI features must define:
+
+- Input
+- Output
+- Failure scenarios
+- Evaluation criteria
+- Guardrails
+
+Never expose:
+
+- Secrets
+- API keys
+- Private data
+
+Prompts are versioned assets.
+

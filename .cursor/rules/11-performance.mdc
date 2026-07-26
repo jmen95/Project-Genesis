@@ -1,0 +1,22 @@
+
+---
+description: Performance rules
+alwaysApply: true
+---
+
+# Performance Rules
+
+Performance matters.
+
+Consider:
+
+- Memory
+- CPU
+- Network
+- Latency
+- Battery
+
+Measure before optimizing.
+
+Avoid premature optimization.
+
