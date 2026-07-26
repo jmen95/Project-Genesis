@@ -26,6 +26,7 @@ Live project knowledge for AI assistants and contributors. Read these files befo
 |----------|---------|
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Package layout and dependency model |
 | [ARCHITECTURE_SUMMARY.md](ARCHITECTURE_SUMMARY.md) | Quick-reference summary |
+| [specs/](../../specs/) | Formal architecture specifications |
 
 ## Process
 

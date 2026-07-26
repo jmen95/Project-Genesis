@@ -37,5 +37,6 @@ See [ARCHITECTURE.md](../.cursor/context/ARCHITECTURE.md) and [DECISION_LOG.md](
 
 ## Related
 
+- [specs/](../specs/) — Formal architecture specifications
 - [CURRENT_TASK.md](../.cursor/context/CURRENT_TASK.md) — Active engineering task
 - [TECH_STACK.md](../.cursor/context/TECH_STACK.md) — Node.js 22, pnpm, Turborepo

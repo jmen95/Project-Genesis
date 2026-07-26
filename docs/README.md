@@ -23,6 +23,7 @@ Official project documentation for Project Genesis.
 Project-wide governance lives at the repository root:
 
 - [PROJECT_CHARTER](000-foundation/PROJECT_CHARTER.md)
+- [specs/](../specs/) — Formal architecture specifications
 - [AI_ARCHITECT.md](../AI_ARCHITECT.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [DEVELOPMENT_WORKFLOW.md](../DEVELOPMENT_WORKFLOW.md)

@@ -103,11 +103,12 @@ Redirect files (point to canonical sources above): `NEXT_ACTIONS.md`, `KNOWN_LIM
 | [`.cursor/memories/known-issues.md`](.cursor/memories/known-issues.md) | System limitations |
 | [`.cursor/memories/lessons-learned.md`](.cursor/memories/lessons-learned.md) | Engineering and AI lessons |
 
-### Layer 4 — Standards and Knowledge
+### Layer 4 — Standards, Knowledge, and Specifications
 
 - [`standards/`](standards/) — Mandatory engineering rules
 - [`knowledge/`](knowledge/) — Evergreen reference material
 - [`templates/`](templates/) — Document and code generation templates
+- [`specs/`](specs/) — Formal architecture specifications (read before implementing)
 
 ## Architectural Decision Framework
 

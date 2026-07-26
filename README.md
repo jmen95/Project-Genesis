@@ -26,11 +26,13 @@ Foundation Phase — Genesis CLI Foundation. See [PROJECT_STATUS.md](PROJECT_STA
 | [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md) | End-to-end development process |
 | [DECISION_LOG.md](DECISION_LOG.md) | Architectural decisions |
 | [PROJECT_STATUS.md](PROJECT_STATUS.md) | Current project progress |
+| [specs/](specs/) | Formal architecture specifications |
 
 ## Repository Structure
 
 | Directory | Purpose |
 |-----------|---------|
+| [specs/](specs/) | Formal architecture specifications |
 | [docs/](docs/) | Official project documentation |
 | [knowledge/](knowledge/) | Evergreen engineering reference |
 | [standards/](standards/) | Mandatory engineering rules |

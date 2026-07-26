@@ -19,6 +19,8 @@ FILES=(
 "CONTRIBUTING.md"
 "DECISION_LOG.md"
 "PROJECT_STATUS.md"
+"specs/README.md"
+"specs/000-project/README.md"
 )
 
 FAILED=0
