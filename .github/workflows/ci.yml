@@ -48,3 +48,5 @@ jobs:
           pnpm genesis --help
           pnpm genesis doctor
           pnpm genesis new smoke-test --dry-run
+          pnpm genesis new ci-validate-game --output /tmp/ci-validate-game
+          pnpm genesis validate /tmp/ci-validate-game

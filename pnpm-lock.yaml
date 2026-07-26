@@ -35,6 +35,9 @@ importers:
       '@genesis/template-engine':
         specifier: workspace:*
         version: link:../template-engine
+      '@genesis/validator':
+        specifier: workspace:*
+        version: link:../validator
       commander:
         specifier: ^13.1.0
         version: 13.1.0
@@ -42,6 +45,19 @@ importers:
       '@types/node':
         specifier: ^22.15.32
         version: 22.20.1
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/node@22.20.1)
+
+  packages/config:
+    dependencies:
+      '@genesis/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
       typescript:
         specifier: ^5.8.3
         version: 5.9.3
@@ -69,6 +85,9 @@ importers:
 
   packages/scaffolding:
     dependencies:
+      '@genesis/config':
+        specifier: workspace:*
+        version: link:../config
       '@genesis/core':
         specifier: workspace:*
         version: link:../core
@@ -78,6 +97,9 @@ importers:
       '@genesis/template-engine':
         specifier: workspace:*
         version: link:../template-engine
+      '@genesis/validator':
+        specifier: workspace:*
+        version: link:../validator
     devDependencies:
       '@types/node':
         specifier: ^22.15.32
@@ -121,6 +143,28 @@ importers:
         version: 3.2.7(@types/node@22.20.1)
 
   packages/templates: {}
+
+  packages/validator:
+    dependencies:
+      '@genesis/config':
+        specifier: workspace:*
+        version: link:../config
+      '@genesis/core':
+        specifier: workspace:*
+        version: link:../core
+      '@genesis/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.32
+        version: 22.20.1
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/node@22.20.1)
 
 packages:
 

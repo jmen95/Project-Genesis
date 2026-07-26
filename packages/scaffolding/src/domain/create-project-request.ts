@@ -4,6 +4,7 @@ export interface CreateProjectRequest {
   readonly outputPath: string;
   readonly dryRun?: boolean;
   readonly force?: boolean;
+  readonly skipValidation?: boolean;
   readonly genesisVersion: string;
   readonly author?: string;
   readonly license?: string;

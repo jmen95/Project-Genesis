@@ -27,6 +27,7 @@
     "@genesis/scaffolding": "workspace:*",
     "@genesis/shared": "workspace:*",
     "@genesis/template-engine": "workspace:*",
+    "@genesis/validator": "workspace:*",
     "commander": "^13.1.0"
   },
   "devDependencies": {

@@ -5,6 +5,7 @@ import { FRAMEWORK_NAME } from '@genesis/shared';
 
 import { type CliServices, createCliServices } from '../application/cli-services-factory.js';
 import { registerNewCommand } from '../commands/new-command.js';
+import { registerValidateCommand } from '../commands/validate-command.js';
 import { GenesisCliExit } from '../errors/genesis-cli-exit.js';
 import { collectDoctorReport, formatDoctorOutput } from '../presentation/doctor-output.js';
 import { getExtendedHelpText } from '../presentation/help-output.js';
@@ -66,6 +67,11 @@ export async function createGenesisProgram(options?: CliRuntimeOptions): Promise
 
   registerNewCommand(program, {
     handler: services.newProjectHandler,
+    stdout,
+  });
+
+  registerValidateCommand(program, {
+    handler: services.validateProjectHandler,
     stdout,
   });
 

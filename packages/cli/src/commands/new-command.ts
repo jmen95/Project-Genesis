@@ -18,6 +18,7 @@ export function registerNewCommand(program: Command, deps: NewCommandDeps): void
     .option('-o, --output <path>', 'Output directory')
     .option('--dry-run', 'Preview generation plan without writing files', false)
     .option('--force', 'Overwrite existing output directory', false)
+    .option('--skip-validation', 'Skip post-generation validation', false)
     .action(async (projectName: string, options: NewCommandOptions) => {
       const result = await deps.handler.handle({
         projectName,
@@ -25,6 +26,7 @@ export function registerNewCommand(program: Command, deps: NewCommandDeps): void
         ...(options.output !== undefined ? { outputPath: options.output } : {}),
         dryRun: options.dryRun,
         force: options.force,
+        skipValidation: options.skipValidation,
       });
 
       deps.stdout.write(result.output);
@@ -40,4 +42,5 @@ interface NewCommandOptions {
   readonly output?: string;
   readonly dryRun: boolean;
   readonly force: boolean;
+  readonly skipValidation: boolean;
 }

@@ -3,6 +3,7 @@ import { join, relative, resolve } from 'node:path';
 import type { IFilesystem } from '@genesis/core';
 import { ConfigurationError } from '@genesis/core';
 
+import { TemplateManifestValidator } from '../application/template-manifest-validator.js';
 import type {
   ITemplateProvider,
   ProjectTemplateDescriptor,
@@ -22,10 +23,14 @@ export interface FilesystemTemplateProviderOptions {
 export class FilesystemTemplateProvider implements ITemplateProvider {
   private readonly filesystem: IFilesystem;
   private readonly templatesRoot: string;
+  private readonly manifestValidator: TemplateManifestValidator;
+  private readonly genesisVersion: string;
 
-  constructor(options: FilesystemTemplateProviderOptions) {
+  constructor(options: FilesystemTemplateProviderOptions & { readonly genesisVersion?: string }) {
     this.filesystem = options.filesystem;
     this.templatesRoot = options.templatesRoot;
+    this.manifestValidator = new TemplateManifestValidator();
+    this.genesisVersion = options.genesisVersion ?? '0.0.0';
   }
 
   async listTemplates(): Promise<readonly TemplateSummary[]> {
@@ -75,6 +80,7 @@ export class FilesystemTemplateProvider implements ITemplateProvider {
     }
 
     const manifest = await this.readManifest(manifestPath);
+    this.manifestValidator.assertValid(manifest, this.genesisVersion);
     const discoveredFiles = await this.discoverFiles(templateRoot);
     const mergedFiles = this.mergeManifestFiles(manifest.files, discoveredFiles);
 

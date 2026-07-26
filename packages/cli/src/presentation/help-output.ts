@@ -5,6 +5,7 @@ export function getExtendedHelpText(): string {
     '',
     'COMMANDS',
     '  new <name>              Scaffold a new project',
+    '  validate [path]         Validate project configuration and structure',
     '  create <name>           Scaffold a new project (alias — coming soon)',
     '  validate                Run architecture and standards checks',
     '  generate <type> [name]  Generate a module within the project',

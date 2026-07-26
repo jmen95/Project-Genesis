@@ -1,4 +1,10 @@
-import { EXIT_INVALID_ARGUMENT, EXIT_SUCCESS, type ExitCode, GenesisError } from '@genesis/core';
+import {
+  EXIT_ERROR,
+  EXIT_INVALID_ARGUMENT,
+  EXIT_SUCCESS,
+  type ExitCode,
+  GenesisError,
+} from '@genesis/core';
 import type { GenerationResult } from '@genesis/scaffolding';
 import { validateProjectName } from '@genesis/shared';
 
@@ -11,6 +17,7 @@ export interface NewProjectHandlerInput {
   readonly outputPath?: string;
   readonly dryRun?: boolean;
   readonly force?: boolean;
+  readonly skipValidation?: boolean;
 }
 
 export interface NewProjectHandlerResult {
@@ -41,12 +48,16 @@ export class NewProjectHandler {
       ...(input.outputPath !== undefined ? { outputPath: input.outputPath } : {}),
       ...(input.dryRun !== undefined ? { dryRun: input.dryRun } : {}),
       ...(input.force !== undefined ? { force: input.force } : {}),
+      ...(input.skipValidation !== undefined ? { skipValidation: input.skipValidation } : {}),
     };
 
     try {
       const result = await this.useCase.execute(command);
+      const exitCode =
+        result.validation && result.validation.errorCount > 0 ? EXIT_ERROR : EXIT_SUCCESS;
+
       return {
-        exitCode: EXIT_SUCCESS,
+        exitCode,
         output: formatGenerationReport(result),
         result,
       };

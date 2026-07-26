@@ -24,5 +24,15 @@ export function formatGenerationReport(result: GenerationResult): string {
     );
   }
 
+  if (result.validation) {
+    lines.push('');
+    lines.push(
+      `Validation: ${result.validation.errorCount} error(s), ${result.validation.warningCount} warning(s) — ${result.validation.success ? 'PASSED' : 'FAILED'}`,
+    );
+    for (const issue of result.validation.issues) {
+      lines.push(`  [${issue.severity}] ${issue.ruleId}: ${issue.message}`);
+    }
+  }
+
   return `${lines.join('\n')}\n`;
 }

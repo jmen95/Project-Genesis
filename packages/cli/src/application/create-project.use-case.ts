@@ -10,6 +10,7 @@ export interface CreateProjectCommand {
   readonly outputPath?: string;
   readonly dryRun?: boolean;
   readonly force?: boolean;
+  readonly skipValidation?: boolean;
   readonly author?: string;
   readonly license?: string;
 }
@@ -30,6 +31,7 @@ export class CreateProjectUseCase {
       outputPath,
       dryRun: command.dryRun ?? false,
       force: command.force ?? false,
+      skipValidation: command.skipValidation ?? false,
       genesisVersion: getCliVersion(),
       license: command.license ?? 'MIT',
       ...(command.author !== undefined ? { author: command.author } : {}),

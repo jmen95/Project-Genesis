@@ -10,6 +10,7 @@ import { HandlebarsTemplateRenderer } from './infrastructure/handlebars-template
 export interface TemplateEngineFactoryOptions {
   readonly filesystem: IFilesystem;
   readonly templatesRoot: string;
+  readonly genesisVersion?: string;
   readonly renderer?: ITemplateRenderer;
 }
 
@@ -28,6 +29,7 @@ export function createTemplateEngineBundle(
   const provider = new FilesystemTemplateProvider({
     filesystem: options.filesystem,
     templatesRoot: options.templatesRoot,
+    ...(options.genesisVersion !== undefined ? { genesisVersion: options.genesisVersion } : {}),
   });
   const contextAssembler = new ContextAssembler();
 
@@ -53,8 +55,13 @@ export type {
   ProjectTemplateManifest,
   TemplateFileEntry,
   TemplateSummary,
+  TemplateVariableSchema,
+  TemplateComponent,
+  ManifestVersion,
   OverwritePolicy,
 } from './domain/template-provider.interface.js';
+export { SUPPORTED_MANIFEST_VERSIONS } from './domain/template-provider.interface.js';
+export { TemplateManifestValidator } from './application/template-manifest-validator.js';
 export { ContextAssembler } from './application/context-assembler.js';
 export type { ProjectContextInput } from './application/context-assembler.js';
 export { TemplateService } from './application/template-service.js';

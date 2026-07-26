@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `@genesis/config` — project schema types, validation, and serialization (framework-only)
+- `@genesis/validator` — composable `IValidationService` and `IValidationRule<T>`
+- Immutable `IGenerationPipelineStep<TInput, TOutput>` generation pipeline
+- `genesis.template.json` v1.1 with variables, components, and min Genesis version
+- Self-contained `genesis.config.ts` with `schemaVersion` (no `@genesis/config` runtime dep)
+- `genesis validate [path]` command
+- `genesis new --skip-validation` flag
+- Post-generation validation report in `genesis new` output
+
+## [0.2.0] - 2026-07-26
+
+### Added
+
 - `@genesis/template-engine` — `ITemplateRenderer`, `ITemplateProvider`, `ContextAssembler`, Handlebars rendering
 - `@genesis/scaffolding` — project scaffolding with generation plans and conflict detection
 - `genesis new <project-name>` — scaffold projects from default template

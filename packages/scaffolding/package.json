@@ -20,9 +20,11 @@
     "clean": "rm -rf dist *.tsbuildinfo"
   },
   "dependencies": {
+    "@genesis/config": "workspace:*",
     "@genesis/core": "workspace:*",
     "@genesis/shared": "workspace:*",
-    "@genesis/template-engine": "workspace:*"
+    "@genesis/template-engine": "workspace:*",
+    "@genesis/validator": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.15.32",

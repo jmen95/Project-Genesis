@@ -11,12 +11,17 @@ import {
 import type { GenerationResult } from '@genesis/scaffolding';
 import { createScaffoldingService } from '@genesis/scaffolding';
 import { createTemplateEngineBundle } from '@genesis/template-engine';
+import { createDefaultValidationService } from '@genesis/validator';
 
+import { getCliVersion } from '../version.js';
 import { CreateProjectUseCase } from './create-project.use-case.js';
 import { NewProjectHandler } from './handlers/new-project.handler.js';
+import { ValidateProjectHandler } from './handlers/validate-project.handler.js';
+import { ValidateProjectUseCase } from './validate-project.use-case.js';
 
 export interface CliServices {
   readonly newProjectHandler: NewProjectHandler;
+  readonly validateProjectHandler: ValidateProjectHandler;
 }
 
 export function resolveTemplatesRoot(): string {
@@ -31,22 +36,29 @@ export function resolveTemplatesRoot(): string {
 
 export async function createCliServices(): Promise<CliServices> {
   const core = await createCoreServices();
+  const genesisVersion = getCliVersion();
   const templatesRoot = resolveTemplatesRoot();
   const templateBundle = createTemplateEngineBundle({
     filesystem: core.filesystem,
     templatesRoot,
+    genesisVersion,
   });
+  const validationService = createDefaultValidationService(core.filesystem);
   const scaffolding = createScaffoldingService({
     filesystem: core.filesystem,
     templateProvider: templateBundle.provider,
     templateEngine: templateBundle.engine,
     contextAssembler: templateBundle.contextAssembler,
+    validationService,
   });
 
-  const useCase = new CreateProjectUseCase(scaffolding);
-  const newProjectHandler = new NewProjectHandler(useCase);
+  const createProjectUseCase = new CreateProjectUseCase(scaffolding);
+  const validateProjectUseCase = new ValidateProjectUseCase(validationService, core.filesystem);
 
-  return { newProjectHandler };
+  return {
+    newProjectHandler: new NewProjectHandler(createProjectUseCase),
+    validateProjectHandler: new ValidateProjectHandler(validateProjectUseCase),
+  };
 }
 
 export function mapGenesisErrorToExitCode(error: unknown): ExitCode {

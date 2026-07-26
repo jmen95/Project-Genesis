@@ -1,6 +1,34 @@
 {
+  "$manifestVersion": "1.1",
   "id": "default",
   "version": "1.0.0",
   "description": "Default Genesis game project",
-  "files": []
+  "genesis": {
+    "minVersion": "0.1.0"
+  },
+  "variables": {
+    "projectName": {
+      "type": "string",
+      "required": true,
+      "description": "Project name in kebab-case"
+    }
+  },
+  "files": [],
+  "components": {
+    "structure": {
+      "description": "Directory skeleton",
+      "files": ["Assets/.gitkeep", "Scripts/.gitkeep", "Tests/.gitkeep"],
+      "dependsOn": []
+    },
+    "config": {
+      "description": "genesis.config.ts",
+      "files": ["genesis.config.ts"],
+      "dependsOn": ["structure"]
+    },
+    "docs": {
+      "description": "Project documentation",
+      "files": ["README.md", "docs/README.md", ".gitignore"],
+      "dependsOn": ["structure"]
+    }
+  }
 }

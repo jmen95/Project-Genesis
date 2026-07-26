@@ -1,3 +1,4 @@
+import type { ValidationReport } from '@genesis/shared';
 import type { OverwritePolicy } from '@genesis/template-engine';
 import type { RenderResult } from '@genesis/template-engine';
 
@@ -27,4 +28,5 @@ export interface GenerationResult {
   readonly skipped: number;
   readonly overwritten: number;
   readonly dryRun: boolean;
+  readonly validation?: ValidationReport;
 }

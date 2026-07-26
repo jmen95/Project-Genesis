@@ -10,6 +10,7 @@
     { "path": "../shared" },
     { "path": "../core" },
     { "path": "../template-engine" },
-    { "path": "../scaffolding" }
+    { "path": "../scaffolding" },
+    { "path": "../validator" }
   ]
 }

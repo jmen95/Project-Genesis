@@ -11,3 +11,9 @@ export {
   RESERVED_PROJECT_NAMES,
   validateProjectName,
 } from './validation/project-name.js';
+export type {
+  ValidationIssue,
+  ValidationReport,
+  ValidationSeverity,
+} from './validation/validation-report.js';
+export { createValidationReport } from './validation/validation-report.js';
