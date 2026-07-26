@@ -14,6 +14,13 @@ package: "@genesis/plugin-nestjs"
 
 Define the backend generation and integration capabilities for Project Genesis, including NestJS project scaffolding, API module generation, database integration, and cloud service plugins for AWS and Firebase.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — NestJS/Express/Fastify, DDD, CQRS, auth, databases, caching, observability, Docker, testing, Swagger, deployment |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -234,6 +241,7 @@ The NestJS plugin registers validators with `@genesis/validator`:
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [003-plugin-system](../003-plugin-system/) — Plugin architecture
 - [006-game-generation](../006-game-generation/) — Game project generation
 - [standards/backend/](../../standards/backend/) — Backend standards
@@ -243,4 +251,5 @@ The NestJS plugin registers validators with `@genesis/validator`:
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

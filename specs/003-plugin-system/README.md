@@ -14,6 +14,13 @@ package: "@genesis/core"
 
 Define the plugin architecture that allows Project Genesis to support Unity, NestJS, AWS, Firebase, and AI services without coupling the core kernel to any specific technology. Plugins extend the framework by registering capabilities with a stable kernel API.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — registration, loading, unloading, dependencies, manifest, versioning, compatibility, security, sandboxing |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -200,6 +207,7 @@ Plugin errors are contained:
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [DECISION_LOG.md](../../DECISION_LOG.md) — ADR-002 Plugin-Based Architecture
 - [007-backend](../007-backend/) — Backend plugins
 - [008-unity](../008-unity/) — Unity plugin
@@ -209,4 +217,5 @@ Plugin errors are contained:
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

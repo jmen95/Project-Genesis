@@ -14,6 +14,13 @@ package: "@genesis/cli"
 
 Define the Genesis CLI — the primary user interface for Project Genesis. The CLI orchestrates project creation, module generation, plugin management, architecture validation, and AI-assisted workflows.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — lifecycle, commands, DI, config, events, hooks, public API, sequence diagrams |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -176,6 +183,7 @@ It delegates to application services in `scaffolding`, `validator`, and the kern
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [000-project](../000-project/) — Project-wide architecture
 - [004-scaffolding](../004-scaffolding/) — Project generation
 - [003-plugin-system](../003-plugin-system/) — Plugin command registration
@@ -185,4 +193,5 @@ It delegates to application services in `scaffolding`, `validator`, and the kern
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

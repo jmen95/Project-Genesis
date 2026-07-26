@@ -21,5 +21,6 @@ Target commands for Sprint 1: `genesis --version`, `genesis --help`.
 
 ## Related
 
-- [../README.md](../README.md) — Package map
+- [specs/001-cli/FUNCTIONAL_SPEC.md](../../specs/001-cli/FUNCTIONAL_SPEC.md) — Complete CLI functional specification
+- [specs/001-cli/](../../specs/001-cli/) — CLI specification overview
 - [../../.cursor/context/PROJECT_SUMMARY.md](../../.cursor/context/PROJECT_SUMMARY.md) — CLI vision

@@ -14,6 +14,13 @@ package: "framework/liveops"
 
 Define the Live Operations capabilities for games built with Project Genesis, including event systems, seasonal content, missions, battle passes, player retention mechanics, and analytics integration. LiveOps extends generated game projects with systems required to operate a live mobile game.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — feature flags, remote config, A/B testing, events, analytics, push, economy, season pass, daily rewards, leaderboards, cloud sync |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -242,6 +249,7 @@ Generated Unity UI for LiveOps:
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [006-game-generation](../006-game-generation/) — Game project generation
 - [007-backend](../007-backend/) — Backend API
 - [008-unity](../008-unity/) — Unity client
@@ -253,4 +261,5 @@ Generated Unity UI for LiveOps:
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

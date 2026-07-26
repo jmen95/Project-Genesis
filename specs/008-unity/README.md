@@ -14,6 +14,13 @@ package: "@genesis/plugin-unity"
 
 Define the Unity integration for Project Genesis, including Unity project scaffolding, system and component generation, ScriptableObject templates, scene setup, and mobile performance conventions.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — Unity 6, URP, 2D/3D, Addressables, ScriptableObjects, Input System, localization, analytics, ads, IAP, cloud save, Firebase, DI, prefabs, scenes, performance |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -219,6 +226,7 @@ The Unity plugin registers validators:
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [003-plugin-system](../003-plugin-system/) — Plugin architecture
 - [006-game-generation](../006-game-generation/) — Game project generation
 - [standards/unity/](../../standards/unity/) — Unity standards
@@ -229,4 +237,5 @@ The Unity plugin registers validators:
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

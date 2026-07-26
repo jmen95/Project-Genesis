@@ -73,15 +73,15 @@ Each specification's README contains detailed implementation steps for its syste
 | ID | Specification | Phase | Package |
 |----|---------------|-------|---------|
 | [000-project](000-project/) | Project-wide architecture and principles | 1 | All |
-| [001-cli](001-cli/) | Genesis CLI command framework | 1 | `@genesis/cli` |
-| [002-template-engine](002-template-engine/) | Template discovery, rendering, validation | 1 | `@genesis/template-engine` |
-| [003-plugin-system](003-plugin-system/) | Plugin contract and lifecycle | 2 | `@genesis/core` (kernel) |
-| [004-scaffolding](004-scaffolding/) | Project and module generation | 1 | `@genesis/scaffolding` |
-| [005-ai-engine](005-ai-engine/) | AI context, prompts, and agents | 4 | `@genesis/ai` |
-| [006-game-generation](006-game-generation/) | End-to-end game project generation | 3 | Multiple |
-| [007-backend](007-backend/) | Backend scaffolding and services | 2 | `@genesis/plugin-nestjs` |
-| [008-unity](008-unity/) | Unity project integration | 2 | `@genesis/plugin-unity` |
-| [009-liveops](009-liveops/) | Live operations systems | Post-MVP | `framework/liveops` |
+| [001-cli](001-cli/) | Genesis CLI command framework ([functional spec](001-cli/FUNCTIONAL_SPEC.md)) | 1 | `@genesis/cli` |
+| [002-template-engine](002-template-engine/) | Template discovery, rendering, validation ([functional spec](002-template-engine/FUNCTIONAL_SPEC.md)) | 1 | `@genesis/template-engine` |
+| [003-plugin-system](003-plugin-system/) | Plugin contract and lifecycle ([functional spec](003-plugin-system/FUNCTIONAL_SPEC.md)) | 2 | `@genesis/core` (kernel) |
+| [004-scaffolding](004-scaffolding/) | Project and module generation ([functional spec](004-scaffolding/FUNCTIONAL_SPEC.md)) | 1 | `@genesis/scaffolding` |
+| [005-ai-engine](005-ai-engine/) | AI context, prompts, and agents ([functional spec](005-ai-engine/FUNCTIONAL_SPEC.md)) | 4 | `@genesis/ai` |
+| [006-game-generation](006-game-generation/) | End-to-end game project generation ([functional spec](006-game-generation/FUNCTIONAL_SPEC.md)) | 3 | Multiple |
+| [007-backend](007-backend/) | Backend scaffolding and services ([functional spec](007-backend/FUNCTIONAL_SPEC.md)) | 2 | `@genesis/plugin-nestjs` |
+| [008-unity](008-unity/) | Unity project integration ([functional spec](008-unity/FUNCTIONAL_SPEC.md)) | 2 | `@genesis/plugin-unity` |
+| [009-liveops](009-liveops/) | Live operations systems ([functional spec](009-liveops/FUNCTIONAL_SPEC.md)) | Post-MVP | `framework/liveops` |
 
 ## Dependency Graph
 

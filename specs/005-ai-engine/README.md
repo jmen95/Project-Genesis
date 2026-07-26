@@ -14,6 +14,13 @@ package: "@genesis/ai"
 
 Define the AI engine that provides context assembly, prompt management, LLM integration, and autonomous agent capabilities for Project Genesis. The AI engine serves both the framework's own development workflows and AI-assisted features within generated game projects.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — architecture, context, prompts, RAG, agents, guardrails, providers, observability, security |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -238,6 +245,7 @@ Every AI operation emits structured logs:
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [DECISION_LOG.md](../../DECISION_LOG.md) — ADR-004 AI-Native Development
 - [prompts/README.md](../../prompts/README.md) — Composable prompt engine
 - [.cursor/rules/06-ai-development.mdc](../../.cursor/rules/06-ai-development.mdc) — AI development rules
@@ -247,4 +255,5 @@ Every AI operation emits structured logs:
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

@@ -14,6 +14,13 @@ package: "@genesis/scaffolding"
 
 Define the scaffolding engine that orchestrates project and module generation by combining templates, plugins, and validation into cohesive output. Scaffolding is the primary user-facing generation capability invoked via `genesis create`.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — architecture, pipeline, file generation, conflict resolution, overwrite policy, dry-run, interactive mode, variables, rendering, validation |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -214,6 +221,7 @@ Validation failure returns exit code `3` with actionable errors.
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [002-template-engine](../002-template-engine/) — Template rendering
 - [006-game-generation](../006-game-generation/) — Full game generation
 - [001-cli](../001-cli/) — CLI commands
@@ -222,4 +230,5 @@ Validation failure returns exit code `3` with actionable errors.
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

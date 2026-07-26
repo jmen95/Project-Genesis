@@ -19,6 +19,8 @@ Scaffolded — implementation deferred to Phase 4. See [ROADMAP.md](../../.curso
 
 ## Related
 
+- [specs/005-ai-engine/FUNCTIONAL_SPEC.md](../../specs/005-ai-engine/FUNCTIONAL_SPEC.md) — Complete AI engine functional specification
+- [specs/005-ai-engine/](../../specs/005-ai-engine/) — AI engine specification overview
 - [../../prompts/](../../prompts/) — Composable prompt engine
 - [../../.cursor/prompts/](../../.cursor/prompts/) — Cursor workflow prompts
 - [ADR-004](../../DECISION_LOG.md#adr-004-ai-native-development)

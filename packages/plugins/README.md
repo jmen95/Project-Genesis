@@ -25,4 +25,6 @@ Production plugins are out of scope during Phase 1. See [CURRENT_STATE.md](../..
 
 ## Related
 
+- [specs/003-plugin-system/FUNCTIONAL_SPEC.md](../../specs/003-plugin-system/FUNCTIONAL_SPEC.md) — Complete plugin system functional specification
+- [specs/003-plugin-system/](../../specs/003-plugin-system/) — Plugin system specification overview
 - [../README.md](../README.md) — Package map

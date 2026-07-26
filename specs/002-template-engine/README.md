@@ -14,6 +14,13 @@ package: "@genesis/template-engine"
 
 Define the template engine responsible for discovering, validating, and rendering file templates with variable substitution. The template engine is the foundation for all code and document generation in Project Genesis.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — architecture, rendering pipeline, variables, expressions, helpers, validation, discovery, versioning, inheritance, testing |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -196,6 +203,7 @@ Discovery returns a `TemplateDescriptor` with metadata. Duplicate names resolve 
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [004-scaffolding](../004-scaffolding/) — Uses template engine for generation
 - [003-plugin-system](../003-plugin-system/) — Plugin template registration
 - [templates/](../../templates/) — Authoring scaffolds (not runtime templates)
@@ -204,4 +212,5 @@ Discovery returns a `TemplateDescriptor` with metadata. Duplicate names resolve 
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

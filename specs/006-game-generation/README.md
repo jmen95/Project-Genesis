@@ -14,6 +14,13 @@ package: multiple
 
 Define the end-to-end game project generation capability that produces complete, production-ready game structures including documentation, architecture, backend services, Unity client, and development workflows from a single `genesis create game` command.
 
+## Documents
+
+| Document | Description |
+|----------|-------------|
+| [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) | **Complete functional specification** — genres, templates, core loop, progression, economy, analytics, ads, achievements, cloud save, localization, accessibility, performance, asset pipeline, prefabs, scenes, AI NPC |
+| This document | Overview, responsibilities, and implementation roadmap |
+
 ## Scope
 
 ### In Scope
@@ -218,6 +225,7 @@ AI enrichment is optional (`--no-ai` flag skips AI steps).
 
 ## Related Documents
 
+- [FUNCTIONAL_SPEC.md](FUNCTIONAL_SPEC.md) — Complete functional specification
 - [004-scaffolding](../004-scaffolding/) — Generation orchestration
 - [007-backend](../007-backend/) — Backend generation
 - [008-unity](../008-unity/) — Unity generation
@@ -228,4 +236,5 @@ AI enrichment is optional (`--no-ai` flag skips AI steps).
 
 | Version | Date | Change |
 |---------|------|--------|
+| 1.0.1 | 2026-07-26 | Linked FUNCTIONAL_SPEC.md |
 | 1.0.0 | 2026-07-26 | Initial approved specification |

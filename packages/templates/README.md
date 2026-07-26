@@ -18,5 +18,6 @@ Scaffolded — will align with `packages/template-engine` per [ARCHITECTURE.md](
 
 ## Related
 
+- [specs/002-template-engine/FUNCTIONAL_SPEC.md](../../specs/002-template-engine/FUNCTIONAL_SPEC.md) — Complete template engine functional specification
+- [specs/002-template-engine/](../../specs/002-template-engine/) — Template engine specification overview
 - [../README.md](../README.md) — Package map
-- [../../templates/](../../templates/) — Authoring template scaffolds
