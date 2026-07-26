@@ -5,6 +5,8 @@ packages:
   - 'packages/validator'
   - 'packages/template-engine'
   - 'packages/plugin-kernel'
+  - 'packages/plugin-sdk'
+  - 'packages/create-plugin'
   - 'packages/scaffolding'
   - 'packages/cli'
   - 'packages/templates'

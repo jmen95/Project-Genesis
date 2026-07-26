@@ -178,13 +178,14 @@ Plugin errors are contained:
 
 ## Future Implementation
 
-### Sprint 4 (M1) — Plugin Kernel Foundation ✅ Implemented
+### Sprint 5 (M1) — Plugin SDK Foundation ✅ Implemented
 
-- `@genesis/plugin-kernel` — contracts, `PluginHost`, scoped registration, pre-import validation
-- Discovery: `packages/plugins/*` and `GENESIS_PLUGIN_PATH` (`.genesis/plugins/*` deferred)
-- `genesis plugin list` / `genesis plugin info <id>`
-- Reference plugin: `@genesis/plugin-example` (template, validator, hook)
-- Hooks wired into `genesis new` and `genesis validate`; pipeline step injection deferred to Sprint 5
+- `@genesis/plugin-sdk` — declarative authoring API (`definePlugin`, `defineTemplate`, `defineValidator`, `defineHook`, `defineCommand`)
+- `@genesis/plugin-sdk/testing` — small harness for definitions, validators, hooks
+- `@genesis/create-plugin` — minimal plugin scaffold
+- `@genesis/plugin-example` migrated to SDK-only dependency
+- Capabilities inferred from contributions; dual manifest validation (`genesis.plugin.json` + `definePlugin`)
+- Kernel exports narrowed: Framework API vs `@genesis/plugin-kernel/internal`
 
 ### Phase 2 — Plugin Manager (remaining)
 

@@ -35,6 +35,26 @@ function emptyContributions(): PluginContributions {
   return { templates: [], validators: [], commands: [], hooks: [] };
 }
 
+function mergeDiscoveredManifest(
+  discovered: PluginManifest,
+  fromPlugin: PluginManifest,
+): PluginManifest {
+  return {
+    ...discovered,
+    ...fromPlugin,
+    name: fromPlugin.name || discovered.name,
+    version: fromPlugin.version || discovered.version,
+    genesisVersion: fromPlugin.genesisVersion || discovered.genesisVersion,
+    ...(fromPlugin.capabilities !== undefined && fromPlugin.capabilities.length > 0
+      ? { capabilities: fromPlugin.capabilities }
+      : discovered.capabilities !== undefined
+        ? { capabilities: discovered.capabilities }
+        : {}),
+    ...(fromPlugin.dependencies !== undefined ? { dependencies: fromPlugin.dependencies } : {}),
+    ...(fromPlugin.templates !== undefined ? { templates: fromPlugin.templates } : {}),
+  };
+}
+
 function pluginEntries<T>(entries: readonly RegistryEntry<T>[], pluginId: string): T[] {
   return entries.filter((entry) => entry.pluginId === pluginId).map((entry) => entry.value);
 }
@@ -236,6 +256,8 @@ export class PluginHost {
       return false;
     }
 
+    record.manifest = mergeDiscoveredManifest(record.manifest, plugin.manifest);
+
     const context = createPluginContext({
       manifest: record.manifest,
       pluginRoot: record.pluginRoot,
@@ -251,12 +273,16 @@ export class PluginHost {
       record.state = 'loaded';
     } catch (error) {
       record.state = 'failed';
-      record.errors.push({
-        pluginId: record.id,
-        stage: 'onLoad',
-        reason: error instanceof Error ? error.message : String(error),
-        ...(error instanceof Error ? { cause: error } : {}),
-      });
+      if (error && typeof error === 'object' && 'pluginLoadError' in error) {
+        record.errors.push((error as { pluginLoadError: PluginLoadError }).pluginLoadError);
+      } else {
+        record.errors.push({
+          pluginId: record.id,
+          stage: 'onLoad',
+          reason: error instanceof Error ? error.message : String(error),
+          ...(error instanceof Error ? { cause: error } : {}),
+        });
+      }
       return false;
     }
 

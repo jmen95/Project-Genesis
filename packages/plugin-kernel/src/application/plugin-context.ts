@@ -37,7 +37,7 @@ export function createPluginContext(options: CreatePluginContextOptions): Plugin
     pluginId: options.manifest.name,
     pluginVersion: options.manifest.version,
     loadOrder: options.loadOrder,
-    capabilities: options.manifest.capabilities,
+    capabilities: options.manifest.capabilities ?? [],
   };
 
   return {

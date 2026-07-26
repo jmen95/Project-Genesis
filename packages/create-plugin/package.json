@@ -1,0 +1,19 @@
+{
+  "name": "@genesis/create-plugin",
+  "version": "0.1.0",
+  "description": "Scaffold a minimal Genesis plugin",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "create-genesis-plugin": "./dist/index.js"
+  },
+  "files": ["dist", "template"],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.32",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,21 +1,19 @@
 {
-  "name": "@genesis/plugin-example",
+  "name": "{{PACKAGE_NAME}}",
   "version": "0.1.0",
-  "description": "Official Genesis SDK reference plugin",
+  "description": "{{PLUGIN_DESCRIPTION}}",
   "license": "MIT",
   "type": "module",
   "private": true,
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc -b",
-    "test": "vitest run",
     "clean": "rm -rf dist *.tsbuildinfo"
   },
   "dependencies": {
-    "@genesis/plugin-sdk": "workspace:*"
+    "@genesis/plugin-sdk": "^0.1.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "typescript": "^5.8.3"
   }
 }

@@ -11,7 +11,7 @@ export interface PluginManifest {
   readonly genesisVersion: string;
   readonly description: string;
   readonly main: string;
-  readonly capabilities: readonly PluginCapability[];
+  readonly capabilities?: readonly PluginCapability[];
   readonly dependencies?: Readonly<Record<string, string>>;
   readonly templates?: string;
 }

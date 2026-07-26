@@ -1,7 +1,7 @@
 {
-  "name": "@genesis/plugin-kernel",
+  "name": "@genesis/plugin-sdk",
   "version": "0.1.0",
-  "description": "Plugin contracts, registries, and runtime composition for Project Genesis",
+  "description": "Public authoring SDK for Genesis plugins",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -9,9 +9,9 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./internal": {
-      "types": "./dist/internal.d.ts",
-      "import": "./dist/internal.js"
+    "./testing": {
+      "types": "./dist/testing/index.d.ts",
+      "import": "./dist/testing/index.js"
     }
   },
   "main": "./dist/index.js",
@@ -24,7 +24,7 @@
     "clean": "rm -rf dist *.tsbuildinfo"
   },
   "dependencies": {
-    "@genesis/core": "workspace:*",
+    "@genesis/plugin-kernel": "workspace:*",
     "@genesis/shared": "workspace:*"
   },
   "devDependencies": {

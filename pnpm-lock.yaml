@@ -84,6 +84,15 @@ importers:
         specifier: ^3.2.4
         version: 3.2.7(@types/node@22.20.1)
 
+  packages/create-plugin:
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.32
+        version: 22.20.1
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
   packages/plugin-kernel:
     dependencies:
       '@genesis/core':
@@ -103,20 +112,39 @@ importers:
         specifier: ^3.2.4
         version: 3.2.7(@types/node@22.20.1)
 
+  packages/plugin-sdk:
+    dependencies:
+      '@genesis/plugin-kernel':
+        specifier: workspace:*
+        version: link:../plugin-kernel
+      '@genesis/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.32
+        version: 22.20.1
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/node@22.20.1)
+
   packages/plugins: {}
 
   packages/plugins/example:
     dependencies:
-      '@genesis/plugin-kernel':
+      '@genesis/plugin-sdk':
         specifier: workspace:*
-        version: link:../../plugin-kernel
-      '@genesis/validator':
-        specifier: workspace:*
-        version: link:../../validator
+        version: link:../../plugin-sdk
     devDependencies:
       typescript:
         specifier: ^5.8.3
         version: 5.9.3
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.7(@types/node@22.20.1)
 
   packages/scaffolding:
     dependencies:

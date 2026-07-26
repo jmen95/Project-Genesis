@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- `@genesis/plugin-sdk` — declarative plugin authoring API (`definePlugin`, `defineTemplate`, `defineValidator`, `defineHook`, `defineCommand`)
+- `@genesis/plugin-sdk/testing` — small harness for plugin definition and validator/hook tests
+- `@genesis/create-plugin` — minimal plugin scaffold (`create-genesis-plugin`)
+- Plugin author docs under `docs/plugins/`
 - `@genesis/plugin-kernel` — plugin contracts, discovery, validation, scoped registration, and hook execution
 - `@genesis/plugin-example` — reference plugin (template, validator, hook contributions)
 - `genesis plugin list` and `genesis plugin info <id>` commands
@@ -26,6 +30,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- `@genesis/plugin-example` migrated to `@genesis/plugin-sdk` only
+- `@genesis/plugin-kernel` exports narrowed to Framework API; runtime internals via `/internal`
+- Plugin capabilities inferred from contributions — optional in `genesis.plugin.json`
 - Removed `buildProjectPlan` from public `@genesis/scaffolding` API
 - Removed `Rendered` type alias from scaffolding pipeline types
 - Narrowed public exports from `@genesis/scaffolding` and `@genesis/validator`

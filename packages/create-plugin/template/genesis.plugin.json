@@ -1,0 +1,8 @@
+{
+  "name": "{{PLUGIN_ID}}",
+  "version": "0.1.0",
+  "apiVersion": "1.x",
+  "genesisVersion": "^0.1.0",
+  "description": "{{PLUGIN_DESCRIPTION}}",
+  "main": "./dist/index.js"
+}

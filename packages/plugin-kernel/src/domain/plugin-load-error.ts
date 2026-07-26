@@ -8,6 +8,7 @@ export type PluginLoadStage =
   | 'validate-entry'
   | 'import'
   | 'contract-check'
+  | 'validate-definition'
   | 'onLoad'
   | 'register';
 

@@ -42,9 +42,7 @@ export function validatePluginManifest(
     );
   }
 
-  if (!Array.isArray(manifest.capabilities) || manifest.capabilities.length === 0) {
-    push('validate-capabilities', 'At least one capability is required');
-  } else {
+  if (manifest.capabilities !== undefined && manifest.capabilities.length > 0) {
     for (const capability of manifest.capabilities) {
       if (!isPluginCapability(capability)) {
         push('validate-capabilities', `Unknown capability: ${capability}`);

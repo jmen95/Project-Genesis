@@ -23,7 +23,7 @@ export class ListPluginsHandler {
 
     for (const plugin of plugins) {
       lines.push(
-        `  ${plugin.id.padEnd(34)}${plugin.manifest.version.padEnd(12)}${plugin.state.padEnd(14)}${plugin.manifest.capabilities.join(', ')}`,
+        `  ${plugin.id.padEnd(34)}${plugin.manifest.version.padEnd(12)}${plugin.state.padEnd(14)}${(plugin.manifest.capabilities ?? []).join(', ')}`,
       );
     }
 
@@ -60,7 +60,7 @@ function formatPluginInfo(plugin: PluginRecord): string {
     `Genesis: ${plugin.manifest.genesisVersion}`,
     `State: ${plugin.state}`,
     `Path: ${plugin.pluginRoot}`,
-    `Capabilities: ${plugin.manifest.capabilities.join(', ')}`,
+    `Capabilities: ${(plugin.manifest.capabilities ?? []).join(', ')}`,
     '',
     'Contributions:',
     `  Templates:  ${plugin.contributions.templates.map((item) => item.templateId).join(', ') || '(none)'}`,

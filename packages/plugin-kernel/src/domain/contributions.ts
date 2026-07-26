@@ -20,7 +20,17 @@ export interface ValidatorRegistration {
 export interface CommandRegistration {
   readonly commandId: string;
   readonly description: string;
+  readonly handler?: (context: CommandHandlerContext) => void | Promise<void>;
   readonly register: (program: unknown) => void;
+}
+
+export interface CommandHandlerContext {
+  readonly args: readonly string[];
+  readonly logger: {
+    info(message: string): void;
+    warn(message: string): void;
+    error(message: string): void;
+  };
 }
 
 export type HookHandler = (context: HookExecutionContext) => void | Promise<void>;

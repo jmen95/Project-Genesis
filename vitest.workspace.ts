@@ -7,6 +7,8 @@ export default defineWorkspace([
   'packages/validator',
   'packages/template-engine',
   'packages/plugin-kernel',
+  'packages/plugin-sdk',
   'packages/scaffolding',
   'packages/cli',
+  'packages/plugins/example',
 ]);
