@@ -47,3 +47,4 @@ jobs:
           pnpm genesis --version
           pnpm genesis --help
           pnpm genesis doctor
+          pnpm genesis new smoke-test --dry-run

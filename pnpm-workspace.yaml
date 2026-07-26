@@ -1,6 +1,8 @@
 packages:
   - 'packages/shared'
   - 'packages/core'
+  - 'packages/template-engine'
+  - 'packages/scaffolding'
   - 'packages/cli'
   - 'packages/templates'
   - 'packages/plugins'

@@ -1,12 +1,9 @@
 {
-  "name": "@genesis/cli",
+  "name": "@genesis/scaffolding",
   "version": "0.1.0",
-  "description": "Genesis CLI — command-line interface for Project Genesis",
+  "description": "Project scaffolding orchestration for Project Genesis",
   "license": "MIT",
   "type": "module",
-  "bin": {
-    "genesis": "./dist/bin/genesis.js"
-  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -24,10 +21,8 @@
   },
   "dependencies": {
     "@genesis/core": "workspace:*",
-    "@genesis/scaffolding": "workspace:*",
     "@genesis/shared": "workspace:*",
-    "@genesis/template-engine": "workspace:*",
-    "commander": "^13.1.0"
+    "@genesis/template-engine": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.15.32",

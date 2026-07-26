@@ -1,8 +1,8 @@
 import { constants } from 'node:fs';
-import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
 
 import { FilesystemError } from '../../domain/errors/genesis-error.js';
-import type { IFilesystem } from '../../domain/filesystem/filesystem.interface.js';
+import type { FileStat, IFilesystem } from '../../domain/filesystem/filesystem.interface.js';
 
 export class NodeFilesystem implements IFilesystem {
   async read(path: string): Promise<string> {
@@ -35,6 +35,26 @@ export class NodeFilesystem implements IFilesystem {
       await mkdir(path, { recursive: true });
     } catch (error) {
       throw new FilesystemError(`Failed to create directory: ${path}`, error as Error);
+    }
+  }
+
+  async readDir(path: string): Promise<string[]> {
+    try {
+      return await readdir(path);
+    } catch (error) {
+      throw new FilesystemError(`Failed to read directory: ${path}`, error as Error);
+    }
+  }
+
+  async stat(path: string): Promise<FileStat> {
+    try {
+      const fileStat = await stat(path);
+      return {
+        isDirectory: fileStat.isDirectory(),
+        isFile: fileStat.isFile(),
+      };
+    } catch (error) {
+      throw new FilesystemError(`Failed to stat path: ${path}`, error as Error);
     }
   }
 }

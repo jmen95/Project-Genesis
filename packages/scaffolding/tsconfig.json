@@ -6,10 +6,5 @@
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test.ts"],
-  "references": [
-    { "path": "../shared" },
-    { "path": "../core" },
-    { "path": "../template-engine" },
-    { "path": "../scaffolding" }
-  ]
+  "references": [{ "path": "../shared" }, { "path": "../core" }, { "path": "../template-engine" }]
 }

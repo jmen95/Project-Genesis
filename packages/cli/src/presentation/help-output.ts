@@ -3,8 +3,9 @@ import { FRAMEWORK_NAME } from '@genesis/shared';
 export function getExtendedHelpText(): string {
   return [
     '',
-    'COMMANDS (coming soon)',
-    '  create <name>           Scaffold a new project',
+    'COMMANDS',
+    '  new <name>              Scaffold a new project',
+    '  create <name>           Scaffold a new project (alias — coming soon)',
     '  validate                Run architecture and standards checks',
     '  generate <type> [name]  Generate a module within the project',
     '  config                  Manage Genesis configuration',

@@ -3,6 +3,9 @@ import { Command, CommanderError } from 'commander';
 import { EXIT_SUCCESS } from '@genesis/core';
 import { FRAMEWORK_NAME } from '@genesis/shared';
 
+import { type CliServices, createCliServices } from '../application/cli-services-factory.js';
+import { registerNewCommand } from '../commands/new-command.js';
+import { GenesisCliExit } from '../errors/genesis-cli-exit.js';
 import { collectDoctorReport, formatDoctorOutput } from '../presentation/doctor-output.js';
 import { getExtendedHelpText } from '../presentation/help-output.js';
 import { formatVersionOutput } from '../presentation/version-output.js';
@@ -17,6 +20,7 @@ export interface CliRuntimeOptions {
   readonly argv?: readonly string[];
   readonly stdout?: CliOutput;
   readonly useColor?: boolean;
+  readonly services?: CliServices;
 }
 
 function isColorEnabled(stdout: CliOutput, override?: boolean): boolean {
@@ -29,9 +33,10 @@ function isColorEnabled(stdout: CliOutput, override?: boolean): boolean {
   return stdout.isTTY;
 }
 
-export function createGenesisProgram(options?: CliRuntimeOptions): Command {
+export async function createGenesisProgram(options?: CliRuntimeOptions): Promise<Command> {
   const stdout = options?.stdout ?? process.stdout;
   const useColor = isColorEnabled(stdout, options?.useColor);
+  const services = options?.services ?? (await createCliServices());
 
   const program = new Command();
 
@@ -59,6 +64,11 @@ export function createGenesisProgram(options?: CliRuntimeOptions): Command {
       stdout.write(`${formatDoctorOutput(report, { useColor })}\n`);
     });
 
+  registerNewCommand(program, {
+    handler: services.newProjectHandler,
+    stdout,
+  });
+
   program.exitOverride();
 
   return program;
@@ -67,12 +77,16 @@ export function createGenesisProgram(options?: CliRuntimeOptions): Command {
 export async function runGenesisCli(options?: CliRuntimeOptions): Promise<number> {
   const argv = options?.argv ?? process.argv;
   const stdout = options?.stdout ?? process.stdout;
-  const program = createGenesisProgram(options);
+  const program = await createGenesisProgram(options);
 
   try {
     await program.parseAsync(argv);
     return EXIT_SUCCESS;
   } catch (error) {
+    if (error instanceof GenesisCliExit) {
+      return error.exitCode;
+    }
+
     if (error instanceof CommanderError) {
       if (error.code === 'commander.helpDisplayed' || error.code === 'commander.version') {
         return EXIT_SUCCESS;

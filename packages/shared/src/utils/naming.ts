@@ -20,3 +20,7 @@ export function camelCase(value: string): string {
   }
   return pascal.charAt(0).toLowerCase() + pascal.slice(1);
 }
+
+export function snakeCase(value: string): string {
+  return kebabCase(value).replace(/-/g, '_');
+}

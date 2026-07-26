@@ -5,4 +5,9 @@ export type { Result } from './types/result.js';
 export { ok, err, isOk, isErr } from './types/result.js';
 export { FRAMEWORK_NAME, PACKAGE_SCOPE } from './constants/framework.js';
 export { assertNever } from './utils/assert-never.js';
-export { kebabCase, pascalCase, camelCase } from './utils/naming.js';
+export { kebabCase, pascalCase, camelCase, snakeCase } from './utils/naming.js';
+export {
+  PROJECT_NAME_PATTERN,
+  RESERVED_PROJECT_NAMES,
+  validateProjectName,
+} from './validation/project-name.js';
