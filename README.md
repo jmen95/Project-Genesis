@@ -31,6 +31,20 @@ Foundation Phase — Genesis CLI Foundation. See [PROJECT_STATUS.md](PROJECT_STA
 | [PROJECT_STATUS.md](PROJECT_STATUS.md) | Current project progress |
 | [specs/](specs/) | Formal architecture specifications |
 
+## Development
+
+Requires Node.js 22+ and pnpm 9+.
+
+```bash
+pnpm install
+pnpm build
+pnpm lint
+pnpm test
+pnpm genesis --help
+pnpm genesis --version
+pnpm genesis doctor
+```
+
 ## Repository Structure
 
 | Directory | Purpose |

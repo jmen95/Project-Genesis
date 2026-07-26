@@ -1,22 +1,22 @@
 # @genesis/shared
 
-Shared types, constants, and utilities used across all Genesis packages.
+Shared types, constants, and pure utilities used across all Genesis packages.
 
 ## Responsibility
 
-- Base type definitions
-- Framework constants (version, package names)
-- Pure utility functions with no side effects
+- Branded ID types and `Result<T, E>`
+- Framework constants (no version — version lives in package manifests)
+- Pure naming and assertion utilities
 
 ## Dependencies
 
-None — this is the innermost package.
+None — innermost package.
 
 ## Status
 
-Scaffolded — see [CURRENT_TASK.md](../../.cursor/context/CURRENT_TASK.md).
+Implemented — Sprint 1 (M1).
 
 ## Related
 
+- [../core/](../core/) — Core services and framework errors
 - [../README.md](../README.md) — Package map
-- [../core/](../core/) — Core services package

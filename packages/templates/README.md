@@ -1,23 +1,12 @@
 # @genesis/templates
 
-Runtime template assets for the Genesis template engine.
-
-## Responsibility
-
-- Packaged templates for project generation
-- Template discovery and categorization
-- Runtime template assets (distinct from [templates/](../../templates/) authoring scaffolds)
-
-## Dependencies
-
-- `@genesis/core` (when template engine is implemented)
+Project templates for Genesis scaffolding.
 
 ## Status
 
-Scaffolded — will align with `packages/template-engine` per [ARCHITECTURE.md](../../.cursor/context/ARCHITECTURE.md) during Sprint 3.
+**Scaffold only** — implementation deferred to Sprint 3 (template engine).
 
 ## Related
 
-- [specs/002-template-engine/FUNCTIONAL_SPEC.md](../../specs/002-template-engine/FUNCTIONAL_SPEC.md) — Complete template engine functional specification
-- [specs/002-template-engine/](../../specs/002-template-engine/) — Template engine specification overview
-- [../README.md](../README.md) — Package map
+- [specs/002-template-engine/](../../specs/002-template-engine/)
+- [packages/README.md](../README.md)

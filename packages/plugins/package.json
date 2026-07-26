@@ -1,0 +1,9 @@
+{
+  "name": "@genesis/plugins",
+  "version": "0.1.0",
+  "description": "Genesis plugin packages (scaffold — not yet implemented)",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {}
+}

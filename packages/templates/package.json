@@ -1,0 +1,9 @@
+{
+  "name": "@genesis/templates",
+  "version": "0.1.0",
+  "description": "Genesis project templates (scaffold — not yet implemented)",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {}
+}

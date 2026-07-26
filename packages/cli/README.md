@@ -4,23 +4,31 @@ Genesis CLI — the central command-line tool for Project Genesis.
 
 ## Responsibility
 
-- User interaction and command parsing
-- CLI lifecycle management
-- Command registration and execution
+- User interaction and command parsing (Commander.js)
+- CLI bootstrap and exit codes
+- Presentation output (help, version, doctor)
+
+## Commands (Sprint 1)
+
+| Command | Description |
+|---------|-------------|
+| `genesis --help` | Show help |
+| `genesis --version` | Show CLI and Node.js version |
+| `genesis doctor` | Print environment information |
 
 ## Dependencies
 
 - `@genesis/core`
 - `@genesis/shared`
+- `commander`
 
-## Status
+## Development
 
-Scaffolded — see [CURRENT_TASK.md](../../.cursor/context/CURRENT_TASK.md).
-
-Target commands for Sprint 1: `genesis --version`, `genesis --help`.
+```bash
+pnpm build
+pnpm genesis --help
+```
 
 ## Related
 
-- [specs/001-cli/FUNCTIONAL_SPEC.md](../../specs/001-cli/FUNCTIONAL_SPEC.md) — Complete CLI functional specification
-- [specs/001-cli/](../../specs/001-cli/) — CLI specification overview
-- [../../.cursor/context/PROJECT_SUMMARY.md](../../.cursor/context/PROJECT_SUMMARY.md) — CLI vision
+- [specs/001-cli/](../../specs/001-cli/) — CLI specification

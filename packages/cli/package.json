@@ -1,0 +1,35 @@
+{
+  "name": "@genesis/cli",
+  "version": "0.1.0",
+  "description": "Genesis CLI — command-line interface for Project Genesis",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "genesis": "./dist/bin/genesis.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@genesis/core": "workspace:*",
+    "@genesis/shared": "workspace:*",
+    "commander": "^13.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.32",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

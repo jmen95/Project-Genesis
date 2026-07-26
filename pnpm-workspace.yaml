@@ -1,0 +1,6 @@
+packages:
+  - 'packages/shared'
+  - 'packages/core'
+  - 'packages/cli'
+  - 'packages/templates'
+  - 'packages/plugins'
