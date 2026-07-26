@@ -1,5 +1,11 @@
 # Games
 
+## Games in this repo
+
+| Game | Status | Path |
+|------|--------|------|
+| **Pet Universe** | MVP playable | [`pet-universe/`](pet-universe/) |
+
 Each game lives in its own isolated directory.
 
 Games consume the Project Genesis framework.

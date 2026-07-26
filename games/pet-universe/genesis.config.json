@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "name": "pet-universe",
+  "displayName": "Pet Universe",
+  "engine": "unity",
+  "unityVersion": "6000.0.31f1",
+  "renderPipeline": "URP",
+  "orientation": "portrait"
+}
