@@ -40,6 +40,8 @@ Mandatory engineering rules for Project Genesis. These apply to humans, AI assis
 
 When a topic exists in both directories, the standard defines what you must do; knowledge explains why and how.
 
+Governance processes (how to propose, review, and ship changes) live in [governance/](../governance/).
+
 ## Status
 
 Nested category standards are scaffolds (`status: Draft` content pending). Top-level standards above are authoritative until nested standards are completed.

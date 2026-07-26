@@ -9,6 +9,10 @@ Core governance documents that define what Project Genesis is and how it operate
 | [PROJECT_CHARTER.md](PROJECT_CHARTER.md) | Vision, mission, principles, and definition of done |
 | [LONG_TERM_VISION.md](LONG_TERM_VISION.md) | Five-year north star: mission, strategy, platform, and autonomous development |
 
+## Processes
+
+Engineering processes (PR, ADR, RFC, release, security) are defined in [governance/](../../governance/).
+
 ## Related
 
 - [../001-vision/](../001-vision/) — Vision, mission, and core values

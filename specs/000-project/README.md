@@ -14,6 +14,7 @@ phase: 1
 | Document | Description |
 |----------|-------------|
 | [DEVELOPER_JOURNEY.md](DEVELOPER_JOURNEY.md) | **Complete developer experience** — installation through maintenance, CLI commands, AI interactions, errors, and recovery |
+| [QUALITY_GATES.md](QUALITY_GATES.md) | **Quality Gate System** — mandatory PR declarations (docs, tests, architecture, performance, security, breaking changes, debt) |
 | This document | System-wide architecture, boundaries, and principles |
 
 ## Purpose

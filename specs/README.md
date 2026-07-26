@@ -72,7 +72,7 @@ Each specification's README contains detailed implementation steps for its syste
 
 | ID | Specification | Phase | Package |
 |----|---------------|-------|---------|
-| [000-project](000-project/) | Project-wide architecture and principles ([developer journey](000-project/DEVELOPER_JOURNEY.md)) | 1 | All |
+| [000-project](000-project/) | Project-wide architecture, [developer journey](000-project/DEVELOPER_JOURNEY.md), [quality gates](000-project/QUALITY_GATES.md) | 1 | All |
 | [100-architecture](100-architecture/) | Core package architecture ([packages](100-architecture/PACKAGES.md), [kernel](100-architecture/KERNEL.md)) | 1 | All |
 | [001-cli](001-cli/) | Genesis CLI ([functional spec](001-cli/FUNCTIONAL_SPEC.md), [UX](001-cli/CLI_USER_EXPERIENCE.md), [commands](001-cli/COMMAND_REFERENCE.md), [config](001-cli/CONFIGURATION.md)) | 1 | `@genesis/cli` |
 | [002-template-engine](002-template-engine/) | Template discovery, rendering, validation ([functional spec](002-template-engine/FUNCTIONAL_SPEC.md)) | 1 | `@genesis/template-engine` |

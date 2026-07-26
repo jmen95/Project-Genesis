@@ -17,8 +17,10 @@ Define how AI coding assistants operate as Principal Software Architects within 
 Applies to:
 
 - Cursor agents and rules
-- Claude Code, GitHub Copilot, and future AI agents
+- Claude Code, GitHub Copilot, Gemini CLI, ChatGPT, OpenAI Codex (future), and other AI agents
 - Human architects delegating work to AI assistants
+
+For multi-assistant collaboration (which tool when, conflict resolution, ownership), see [governance/AI_COLLABORATION.md](governance/AI_COLLABORATION.md).
 
 Does not apply to:
 
@@ -237,6 +239,7 @@ Use [`.cursor/CURSOR_CHECKLIST.md`](.cursor/CURSOR_CHECKLIST.md) before, during,
 
 ## Related Documents
 
+- [governance/AI_COLLABORATION.md](governance/AI_COLLABORATION.md) — Multi-AI collaboration model
 - [PROJECT_STATUS.md](PROJECT_STATUS.md) — Current project state
 - [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution guidelines
 - [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md) — End-to-end workflow

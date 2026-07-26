@@ -30,3 +30,7 @@ blocks/current-context.md
 ```
 
 Templates reference these blocks.
+
+## Multi-AI collaboration
+
+Portable blocks in this directory are the **canonical prompt source** for all assistants (Cursor, Claude Code, Copilot, ChatGPT, etc.). See [governance/AI_COLLABORATION.md](../governance/AI_COLLABORATION.md) for tool roles and ownership.

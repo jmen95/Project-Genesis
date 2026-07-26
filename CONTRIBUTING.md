@@ -21,10 +21,12 @@ Applies to all contributions: code, documentation, standards, templates, prompts
 Before contributing, read:
 
 1. [docs/000-foundation/PROJECT_CHARTER.md](docs/000-foundation/PROJECT_CHARTER.md) — Vision and principles
-2. [AI_ARCHITECT.md](AI_ARCHITECT.md) — AI assistant operating guide
-3. [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md) — End-to-end process
-4. [`.cursor/context/DEFINITION_OF_DONE.md`](.cursor/context/DEFINITION_OF_DONE.md) — Completion criteria
-5. [standards/README.md](standards/README.md) — Mandatory engineering rules
+2. [governance/README.md](governance/README.md) — Governance model (PR, ADR, RFC, release, security)
+3. [governance/AI_COLLABORATION.md](governance/AI_COLLABORATION.md) — Multi-AI assistant collaboration
+4. [AI_ARCHITECT.md](AI_ARCHITECT.md) — AI assistant operating guide
+4. [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md) — End-to-end process
+5. [`.cursor/context/DEFINITION_OF_DONE.md`](.cursor/context/DEFINITION_OF_DONE.md) — Completion criteria
+6. [standards/README.md](standards/README.md) — Mandatory engineering rules
 
 ## Repository Structure
 
@@ -32,7 +34,8 @@ Understand where your contribution belongs before starting:
 
 | Directory | Purpose | Contribution Type |
 |-----------|---------|-------------------|
-| `docs/` | Official project documents (charter, vision) | Governance docs |
+| `governance/` | Processes and policies (PR, ADR, RFC, release) | Governance docs |
+| `docs/` | Official project documents (charter, vision) | Project docs |
 | `knowledge/` | Evergreen engineering knowledge | Reference articles |
 | `standards/` | Mandatory engineering rules | Standards |
 | `templates/` | Generation templates for docs and code | Templates |
@@ -81,11 +84,11 @@ flowchart TD
     I --> J[Update PROJECT_STATUS if needed]
 ```
 
-Full workflow details: [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md).
+Full workflow details: [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md). Process details: [governance/PULL_REQUEST_PROCESS.md](governance/PULL_REQUEST_PROCESS.md).
 
 ## Branching Strategy
 
-Follow [standards/GIT_STANDARD.md](standards/GIT_STANDARD.md):
+Follow [governance/BRANCHING_STRATEGY.md](governance/BRANCHING_STRATEGY.md) and [standards/GIT_STANDARD.md](standards/GIT_STANDARD.md):
 
 | Prefix | Use |
 |--------|-----|
@@ -118,6 +121,8 @@ Use conventional commit prefixes:
 
 ## Pull Request Guidelines
 
+See [governance/PULL_REQUEST_PROCESS.md](governance/PULL_REQUEST_PROCESS.md) for the full PR lifecycle. Complete the **Quality Gates** table per [specs/000-project/QUALITY_GATES.md](specs/000-project/QUALITY_GATES.md).
+
 ### Before Opening a PR
 
 - [ ] Changes align with current milestone and sprint scope
@@ -129,12 +134,13 @@ Use conventional commit prefixes:
 
 ### PR Description
 
-Use the template at [`templates/github/pull-request.md`](templates/github/pull-request.md). Include:
+Use the template at [`templates/github/pull-request.md`](templates/github/pull-request.md). Include the mandatory Quality Gates table (see [specs/000-project/QUALITY_GATES.md](specs/000-project/QUALITY_GATES.md)):
 
 1. **Summary** — What changed and why
-2. **Test plan** — How to verify the change
-3. **Architectural impact** — Layer or package changes, new dependencies
-4. **Related decisions** — Link to ADRs in [DECISION_LOG.md](DECISION_LOG.md) if applicable
+2. **Quality Gates** — Documentation, tests, architecture, performance, security, breaking changes, technical debt
+3. **Test plan** — How to verify the change
+4. **Architectural impact** — Layer or package changes, new dependencies
+5. **Related decisions** — Link to ADRs in [DECISION_LOG.md](DECISION_LOG.md) if applicable
 
 ### Review Criteria
 
@@ -150,7 +156,7 @@ Reviewers evaluate contributions against [`.cursor/rules/13-code-review.mdc`](.c
 
 ### Code Contributions
 
-Follow [standards/CODING_STANDARD.md](standards/CODING_STANDARD.md) and [standards/ARCHITECTURE_STANDARD.md](standards/ARCHITECTURE_STANDARD.md):
+Follow [governance/CODING_STANDARDS.md](governance/CODING_STANDARDS.md), [standards/CODING_STANDARD.md](standards/CODING_STANDARD.md), and [standards/ARCHITECTURE_STANDARD.md](standards/ARCHITECTURE_STANDARD.md):
 
 - Clean Architecture with inward-pointing dependencies
 - Strict TypeScript (no `any`)
@@ -161,7 +167,7 @@ Use [`.cursor/prompts/create-module.md`](.cursor/prompts/create-module.md) when 
 
 ### Documentation Contributions
 
-Follow [standards/DOCUMENTATION_STANDARD.md](standards/DOCUMENTATION_STANDARD.md). Every document must include:
+Follow [governance/DOCUMENTATION_POLICY.md](governance/DOCUMENTATION_POLICY.md) and [standards/DOCUMENTATION_STANDARD.md](standards/DOCUMENTATION_STANDARD.md). Every document must include:
 
 - Title and purpose
 - Scope
@@ -189,7 +195,7 @@ Knowledge articles in `knowledge/` are framework-agnostic reference material. Ru
 
 ### Prompt and Template Contributions
 
-Prompts are versioned assets. See [ADR-004](DECISION_LOG.md#adr-004-ai-native-development) and [`.cursor/rules/06-ai-development.mdc`](.cursor/rules/06-ai-development.mdc).
+Prompts are versioned assets. See [governance/AI_CONTRIBUTION_POLICY.md](governance/AI_CONTRIBUTION_POLICY.md), [ADR-004](DECISION_LOG.md#adr-004-ai-native-development), and [`.cursor/rules/06-ai-development.mdc`](.cursor/rules/06-ai-development.mdc).
 
 - Prompt blocks: `prompts/blocks/`
 - Workflow prompts: `prompts/workflows/`
@@ -208,18 +214,25 @@ See [`.cursor/context/CURRENT_STATE.md`](.cursor/context/CURRENT_STATE.md).
 
 ## Architectural Decisions
 
-Significant decisions must be recorded in [DECISION_LOG.md](DECISION_LOG.md) before implementation. Use the ADR format from [`templates/engineering/adr.md`](templates/engineering/adr.md).
+Significant decisions must be recorded in [DECISION_LOG.md](DECISION_LOG.md) before implementation. Follow [governance/ADR_PROCESS.md](governance/ADR_PROCESS.md). Use the ADR format from [`templates/engineering/adr.md`](templates/engineering/adr.md).
 
 Do not implement solutions that contradict existing ADRs without first superseding the ADR.
 
 ## Reporting Issues
 
-Use the template at [`templates/github/issue.md`](templates/github/issue.md). Include:
+Use the appropriate template from [templates/github/](templates/github/):
 
-- Expected behavior
-- Actual behavior
-- Steps to reproduce
-- Environment details
+| Type | Template |
+|------|----------|
+| Bug | [bug-report.md](templates/github/bug-report.md) |
+| Feature | [feature-request.md](templates/github/feature-request.md) |
+| RFC | [rfc.md](templates/github/rfc.md) |
+
+Full GitHub workflow: [governance/GITHUB_WORKFLOW.md](governance/GITHUB_WORKFLOW.md).
+
+For questions, prefer GitHub Discussions (Q&A) over issues. For security vulnerabilities, use GitHub Security Advisories—not public issues.
+
+Legacy generic template: [templates/github/issue.md](templates/github/issue.md).
 
 ## Code of Conduct
 
@@ -232,6 +245,8 @@ Project Genesis values:
 
 ## Related Documents
 
+- [governance/README.md](governance/README.md) — Governance index
+- [governance/GITHUB_WORKFLOW.md](governance/GITHUB_WORKFLOW.md) — GitHub workflow
 - [AI_ARCHITECT.md](AI_ARCHITECT.md) — AI assistant guide
 - [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md) — Development process
 - [PROJECT_STATUS.md](PROJECT_STATUS.md) — Current project state

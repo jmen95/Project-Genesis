@@ -21,6 +21,9 @@ Foundation Phase — Genesis CLI Foundation. See [PROJECT_STATUS.md](PROJECT_STA
 
 | Document | Purpose |
 |----------|---------|
+| [governance/](governance/) | Engineering governance model (PR, ADR, RFC, release, security, AI, GitHub) |
+| [governance/GITHUB_WORKFLOW.md](governance/GITHUB_WORKFLOW.md) | GitHub labels, milestones, projects, templates, releases |
+| [governance/AI_COLLABORATION.md](governance/AI_COLLABORATION.md) | Multi-AI assistant collaboration model |
 | [AI_ARCHITECT.md](AI_ARCHITECT.md) | AI assistant operating guide |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to contribute |
 | [DEVELOPMENT_WORKFLOW.md](DEVELOPMENT_WORKFLOW.md) | End-to-end development process |
@@ -35,6 +38,7 @@ Foundation Phase — Genesis CLI Foundation. See [PROJECT_STATUS.md](PROJECT_STA
 | [specs/](specs/) | Formal architecture specifications |
 | [docs/](docs/) | Official project documentation |
 | [knowledge/](knowledge/) | Evergreen engineering reference |
+| [governance/](governance/) | Processes and policies |
 | [standards/](standards/) | Mandatory engineering rules |
 | [templates/](templates/) | Document and code generation templates |
 | [prompts/](prompts/) | Composable AI prompt engine |

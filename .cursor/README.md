@@ -32,6 +32,7 @@ It defines:
 | [context/README.md](context/README.md) | Context directory index |
 | [context/CURRENT_TASK.md](context/CURRENT_TASK.md) | Active engineering task |
 | [../AI_ARCHITECT.md](../AI_ARCHITECT.md) | AI architect guide |
+| [../governance/AI_COLLABORATION.md](../governance/AI_COLLABORATION.md) | Multi-AI collaboration |
 | [../DECISION_LOG.md](../DECISION_LOG.md) | Canonical architectural decisions |
 
 ## Prompt Systems

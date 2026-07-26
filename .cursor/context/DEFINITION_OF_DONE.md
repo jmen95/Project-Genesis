@@ -29,7 +29,7 @@ Every completed work item must satisfy all of the following:
 | 5 | **Formatter clean** | `pnpm format:check` passes with no violations |
 | 6 | **Documentation updated** | Relevant docs, READMEs, and context files reflect the change |
 | 7 | **No secrets exposed** | No credentials, API keys, or sensitive data in code or docs |
-| 8 | **Review completed** | Pull request approved per [CONTRIBUTING.md](../../CONTRIBUTING.md) |
+| 8 | **Review completed** | Pull request approved per [CONTRIBUTING.md](../../CONTRIBUTING.md); Quality Gates verified per [QUALITY_GATES.md](../../specs/000-project/QUALITY_GATES.md) |
 | 9 | **Decision recorded** | New architectural decisions added to [DECISION_LOG.md](../../DECISION_LOG.md) |
 
 > Criteria 4 and 5 apply once the monorepo is bootstrapped. During the documentation-only phase, they apply to markdown formatting and link validity.
@@ -144,6 +144,7 @@ Full checklist: [`.cursor/CURSOR_CHECKLIST.md`](../CURSOR_CHECKLIST.md).
 - [docs/000-foundation/PROJECT_CHARTER.md](../../docs/000-foundation/PROJECT_CHARTER.md) — Base definition of done
 - [DEVELOPMENT_WORKFLOW.md](../../DEVELOPMENT_WORKFLOW.md) — When to verify DoD
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — PR requirements
+- [specs/000-project/QUALITY_GATES.md](../../specs/000-project/QUALITY_GATES.md) — PR quality gate declarations
 - [AI_ARCHITECT.md](../../AI_ARCHITECT.md) — AI output expectations
 
 ## Changelog

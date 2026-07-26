@@ -20,15 +20,17 @@ Official project documentation for Project Genesis.
 
 ## Governance Documents
 
-Project-wide governance lives at the repository root:
-
-- [PROJECT_CHARTER](000-foundation/PROJECT_CHARTER.md)
-- [specs/](../specs/) — Formal architecture specifications
-- [AI_ARCHITECT.md](../AI_ARCHITECT.md)
-- [CONTRIBUTING.md](../CONTRIBUTING.md)
-- [DEVELOPMENT_WORKFLOW.md](../DEVELOPMENT_WORKFLOW.md)
-- [DECISION_LOG.md](../DECISION_LOG.md)
-- [PROJECT_STATUS.md](../PROJECT_STATUS.md)
+| Location | Purpose |
+|----------|---------|
+| [governance/](../governance/) | Processes and policies (PR, ADR, RFC, release, security, AI) |
+| [000-foundation/PROJECT_CHARTER.md](000-foundation/PROJECT_CHARTER.md) | Charter and definition of done |
+| [000-foundation/LONG_TERM_VISION.md](000-foundation/LONG_TERM_VISION.md) | Five-year strategic north star |
+| [specs/](../specs/) | Formal architecture specifications |
+| [AI_ARCHITECT.md](../AI_ARCHITECT.md) | AI assistant operating guide |
+| [CONTRIBUTING.md](../CONTRIBUTING.md) | How to contribute |
+| [DEVELOPMENT_WORKFLOW.md](../DEVELOPMENT_WORKFLOW.md) | End-to-end development process |
+| [DECISION_LOG.md](../DECISION_LOG.md) | Architectural decisions |
+| [PROJECT_STATUS.md](../PROJECT_STATUS.md) | Current project progress |
 
 ## Related
 

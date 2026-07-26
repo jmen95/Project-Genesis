@@ -100,13 +100,13 @@ AI assistants must present this plan and wait for approval when requirements are
 
 ### 1.4 Record Decisions
 
-If the plan introduces architectural choices not covered by [DECISION_LOG.md](DECISION_LOG.md), create an ADR before implementation. Use [`templates/engineering/adr.md`](templates/engineering/adr.md).
+If the plan introduces architectural choices not covered by [DECISION_LOG.md](DECISION_LOG.md), create an ADR before implementation. Follow [governance/ADR_PROCESS.md](governance/ADR_PROCESS.md). Use [`templates/engineering/adr.md`](templates/engineering/adr.md).
 
 ## Phase 2 — Implementation
 
 ### 2.1 Branch
 
-Create a focused branch following [CONTRIBUTING.md](CONTRIBUTING.md#branching-strategy).
+Create a focused branch following [governance/BRANCHING_STRATEGY.md](governance/BRANCHING_STRATEGY.md).
 
 ### 2.2 Implement
 
@@ -202,17 +202,17 @@ Trigger an architecture review when:
 - A new external integration is introduced
 - Layer boundaries are modified
 
-Use [`.cursor/prompts/architecture-review.md`](.cursor/prompts/architecture-review.md) or [prompts/workflows/architecture-review.md](prompts/workflows/architecture-review.md).
+Follow [governance/ARCHITECTURE_REVIEW_PROCESS.md](governance/ARCHITECTURE_REVIEW_PROCESS.md). Use [`.cursor/prompts/architecture-review.md`](.cursor/prompts/architecture-review.md) or [prompts/workflows/architecture-review.md](prompts/workflows/architecture-review.md).
 
 ## Phase 4 — Delivery
 
 ### 4.1 Pull Request
 
-Open a PR following [CONTRIBUTING.md](CONTRIBUTING.md#pull-request-guidelines). Use [templates/github/pull-request.md](templates/github/pull-request.md).
+Open a PR following [governance/PULL_REQUEST_PROCESS.md](governance/PULL_REQUEST_PROCESS.md). Complete the Quality Gates table per [specs/000-project/QUALITY_GATES.md](specs/000-project/QUALITY_GATES.md). Use [templates/github/pull-request.md](templates/github/pull-request.md).
 
 ### 4.2 Code Review
 
-Reviewers apply [`.cursor/rules/13-code-review.mdc`](.cursor/rules/13-code-review.mdc) criteria. AI-generated code requires the same scrutiny as human-written code. See [lessons-learned.md](.cursor/memories/lessons-learned.md).
+Reviewers apply [`.cursor/rules/13-code-review.mdc`](.cursor/rules/13-code-review.mdc) criteria. AI-generated code requires the same scrutiny as human-written code. See [governance/AI_CONTRIBUTION_POLICY.md](governance/AI_CONTRIBUTION_POLICY.md) and [lessons-learned.md](.cursor/memories/lessons-learned.md).
 
 ### 4.3 Merge and Update Status
 
@@ -225,7 +225,7 @@ After merge:
 
 ## Release Workflow
 
-Releases follow [standards/release/semantic-versioning.md](standards/release/semantic-versioning.md):
+Releases follow [governance/RELEASE_STRATEGY.md](governance/RELEASE_STRATEGY.md) and [governance/VERSIONING_STRATEGY.md](governance/VERSIONING_STRATEGY.md):
 
 | Version Part | When to Increment |
 |--------------|-------------------|
@@ -237,7 +237,7 @@ Release checklist: [`templates/production/release.md`](templates/production/rele
 
 ## AI-Assisted Development
 
-AI assistants follow [AI_ARCHITECT.md](AI_ARCHITECT.md) as their operating guide. Key differences from human workflow:
+AI assistants follow [AI_ARCHITECT.md](AI_ARCHITECT.md) and [governance/AI_CONTRIBUTION_POLICY.md](governance/AI_CONTRIBUTION_POLICY.md) as their operating guides. Key differences from human workflow:
 
 | Step | AI Behavior |
 |------|-------------|
@@ -272,6 +272,7 @@ Templates: [`templates/production/milestone.md`](templates/production/milestone.
 
 ## Related Documents
 
+- [governance/README.md](governance/README.md) — Governance index
 - [AI_ARCHITECT.md](AI_ARCHITECT.md) — AI operating guide
 - [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution mechanics
 - [DECISION_LOG.md](DECISION_LOG.md) — Architectural decisions
